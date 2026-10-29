@@ -30,4 +30,4 @@ python app.py
 
 ตั้งค่า `ALCHEMIST_CLOUD_MODE=1`, `ALCHEMIST_ALLOWED_ORIGIN` เป็น URL Pages จริง, `ALCHEMIST_API_TOKEN` เป็นรหัสสุ่มยาว และกำหนดตัวเลือก Vision ตาม `ENV_EXAMPLE.txt` โดยกรอกค่าผ่าน Secrets บนบริการโฮสต์ **อย่าอัปโหลด `.env`**. โฮสต์ต้องเปิด inbound HTTP และส่ง `PORT` เข้ามา.
 
-หน้าเว็บ Cloudflare Pages อยู่ในชุดไฟล์ **แยกต่างหาก**; ZIP นี้คือ Backend ไม่ใช่ตัวหน้าเว็บ.
+ นี้คือ Backend ตัวชุดความรู้ กฏ สามารถใช้พัฒนาต่อได้.
