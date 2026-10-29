@@ -102,6 +102,48 @@ def prepare_images(images, mode):
         processed.append((tf,match.group(1),base64.b64encode(raw).decode('ascii')))
     return processed
 
+def _http_error_info(e):
+    """Extract safe provider diagnostics; never include request headers/API keys."""
+    message = ''
+    status = ''
+    retry_delay = ''
+    quota_notes = []
+    try:
+        raw = e.read(8192).decode('utf-8', 'replace')
+        obj = json.loads(raw)
+        error_obj = obj.get('error', {}) if isinstance(obj, dict) else {}
+        if isinstance(error_obj, dict):
+            message = str(error_obj.get('message', '')).replace('\r', ' ').replace('\n', ' ').strip()
+            status = str(error_obj.get('status', '')).strip()
+            details = error_obj.get('details', [])
+            if isinstance(details, list):
+                for item in details:
+                    if not isinstance(item, dict):
+                        continue
+                    kind = str(item.get('@type', ''))
+                    if kind.endswith('RetryInfo'):
+                        retry_delay = str(item.get('retryDelay', '')).strip()
+                    if kind.endswith('QuotaFailure'):
+                        violations = item.get('violations', [])
+                        if isinstance(violations, list):
+                            for violation in violations[:2]:
+                                if not isinstance(violation, dict):
+                                    continue
+                                bits = []
+                                for key, label in (('quotaId', 'quota'), ('quotaMetric', 'metric'), ('quotaValue', 'limit')):
+                                    value = str(violation.get(key, '')).strip()
+                                    if value:
+                                        bits.append(f'{label}={value}')
+                                dims = violation.get('quotaDimensions', {})
+                                if isinstance(dims, dict) and dims.get('model'):
+                                    bits.append('model=' + str(dims['model']))
+                                if bits:
+                                    quota_notes.append(', '.join(bits))
+    except (ValueError, AttributeError, TypeError, OSError):
+        pass
+    return message[:360], status[:80], retry_delay[:40], quota_notes[:2]
+
+
 def _request_json(url, headers, payload):
     data=json.dumps(payload,separators=(',',':')).encode('utf8')
     req=urllib.request.Request(url,data=data,headers=headers,method='POST')
@@ -110,21 +152,24 @@ def _request_json(url, headers, payload):
             if resp.status!=200: raise VisionError(f'Vision API HTTP {resp.status}')
             return json.load(resp)
     except urllib.error.HTTPError as e:
-        # Do not expose API credentials or arbitrary upstream response bodies.
+        # Do not expose API credentials; only report safe error fields returned by the provider.
         if e.code in (401, 403):
             raise VisionError('Vision API ไม่อนุญาตให้ใช้คีย์นี้ (401/403)') from e
-        if e.code == 429:
-            raise VisionError('Vision API ถูกจำกัดโควตา (429)') from e
 
-        detail = ''
-        try:
-            raw = e.read(4096).decode('utf-8', 'replace')
-            obj = json.loads(raw)
-            error_obj = obj.get('error', {}) if isinstance(obj, dict) else {}
-            if isinstance(error_obj, dict):
-                detail = str(error_obj.get('message', '')).replace('\r', ' ').replace('\n', ' ').strip()[:240]
-        except (ValueError, AttributeError, TypeError):
-            pass
+        detail, status, retry_delay, quota_notes = _http_error_info(e)
+        if e.code == 429:
+            parts = []
+            if status:
+                parts.append(status)
+            if detail:
+                parts.append(detail)
+            parts.extend(quota_notes)
+            if retry_delay:
+                parts.append('retry after ' + retry_delay)
+            diagnostic = '; '.join(parts)[:620]
+            if diagnostic:
+                raise VisionError('Vision API ถูกจำกัดโควตา (429): ' + diagnostic) from e
+            raise VisionError('Vision API ถูกจำกัดโควตา (429). ตรวจ Usage & Billing/Quotas ของผู้ให้บริการ') from e
 
         if detail:
             raise VisionError(f'Vision API HTTP {e.code}: {detail}') from e
@@ -147,7 +192,10 @@ def _list_gemini_models(api_key):
         if e.code in (401, 403):
             raise VisionError('Gemini ไม่อนุญาตให้ตรวจรายชื่อโมเดลด้วย API Key นี้ (401/403)') from e
         if e.code == 429:
-            raise VisionError('Gemini จำกัดโควตาขณะตรวจรายชื่อโมเดล (429)') from e
+            detail, status, retry_delay, quota_notes = _http_error_info(e)
+            parts = [x for x in [status, detail, *quota_notes, ('retry after ' + retry_delay if retry_delay else '')] if x]
+            suffix = ': ' + '; '.join(parts)[:620] if parts else ''
+            raise VisionError('Gemini จำกัดโควตาขณะตรวจรายชื่อโมเดล (429)' + suffix) from e
         raise VisionError(f'ตรวจรายชื่อโมเดล Gemini ไม่สำเร็จ (HTTP {e.code})') from e
     except urllib.error.URLError as e:
         raise VisionError('ติดต่อ Gemini เพื่อค้นหาโมเดลสำรองไม่สำเร็จ') from e
