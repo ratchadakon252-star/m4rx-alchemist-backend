@@ -172,7 +172,8 @@ def _request_json(url, headers, payload):
             raise VisionError('Vision API ถูกจำกัดโควตา (429). ตรวจ Usage & Billing/Quotas ของผู้ให้บริการ') from e
 
         if detail:
-            raise VisionError(f'Vision API HTTP {e.code}: {detail}') from e
+            suffix = '; retry after ' + retry_delay if retry_delay else ''
+            raise VisionError(f'Vision API HTTP {e.code}: {detail}{suffix}') from e
         raise VisionError(f'Vision API ตอบ HTTP {e.code}; ตรวจโมเดลและบริการ') from e
     except urllib.error.URLError as e: raise VisionError('ติดต่อ Vision API ไม่สำเร็จ ตรวจอินเทอร์เน็ตหรือสิทธิ์เซิร์ฟเวอร์') from e
     except TimeoutError as e: raise VisionError('Vision API ตอบช้าเกินกำหนด') from e
@@ -250,8 +251,14 @@ def _is_zero_model_quota_error(exc):
     ) and ('quota' in message or 'free_tier' in message or 'free tier' in message)
 
 
+def _is_temporary_model_demand_error(exc):
+    """Gemini 503 commonly means a model is temporarily overloaded."""
+    message = str(exc).lower()
+    return 'http 503' in message or 'high demand' in message or 'temporarily unavailable' in message
+
+
 def _gemini_generate_with_fallback(model, api_key, payload):
-    """Try configured model, then other models on 404 or explicit zero quota."""
+    """Try configured model, then a bounded set of alternatives on 404, zero quota, or 503."""
     base = 'https://generativelanguage.googleapis.com/v1beta/models/'
     headers = {'x-goog-api-key': api_key, 'Content-Type': 'application/json'}
 
@@ -261,13 +268,24 @@ def _gemini_generate_with_fallback(model, api_key, payload):
     try:
         return request(model), model
     except VisionError as exc:
-        if 'HTTP 404' not in str(exc) and not _is_zero_model_quota_error(exc):
+        if ('HTTP 404' not in str(exc)
+                and not _is_zero_model_quota_error(exc)
+                and not _is_temporary_model_demand_error(exc)):
             raise
         initial_error = exc
 
     available = [candidate for candidate in _list_gemini_models(api_key) if candidate != model]
+    saw_zero_quota = _is_zero_model_quota_error(initial_error)
+    saw_503 = _is_temporary_model_demand_error(initial_error)
+    saw_404 = 'HTTP 404' in str(initial_error)
+
     if not available:
-        if _is_zero_model_quota_error(initial_error):
+        if saw_503:
+            raise VisionError(
+                f'Gemini โมเดล {model} ตอบ HTTP 503 เพราะมีผู้ใช้งานหนาแน่น และไม่พบโมเดลสำรอง '
+                'ให้ลองใหม่ภายหลัง หรือตั้ง ALCHEMIST_VISION_MODEL เป็นโมเดลอื่นที่บัญชีเข้าถึงได้'
+            ) from initial_error
+        if saw_zero_quota:
             raise VisionError(
                 f'โมเดล Gemini {model} ไม่มีโควตา Free Tier สำหรับโปรเจกต์นี้ (limit=0). '
                 'เลือกโมเดลที่มีโควตา หรือเปิด Billing ใน Google AI Studio'
@@ -277,32 +295,48 @@ def _gemini_generate_with_fallback(model, api_key, payload):
         ) from initial_error
 
     last_error = initial_error
-    saw_zero_quota = _is_zero_model_quota_error(initial_error)
-    # Try a small number of candidates to avoid uncontrolled API requests.
-    # Candidate ranking prioritizes Flash models before newer, non-Flash families.
+    # Keep fallback requests bounded; do not retry indefinitely or fan out on 429.
     for candidate in available[:6]:
         try:
             return request(candidate), candidate
         except VisionError as retry_error:
             last_error = retry_error
-            if 'HTTP 404' in str(retry_error) or _is_zero_model_quota_error(retry_error):
-                saw_zero_quota = saw_zero_quota or _is_zero_model_quota_error(retry_error)
+            if 'HTTP 404' in str(retry_error):
+                saw_404 = True
+                continue
+            if _is_zero_model_quota_error(retry_error):
+                saw_zero_quota = True
+                continue
+            if _is_temporary_model_demand_error(retry_error):
+                saw_503 = True
                 continue
             # A normal 429 (e.g. requests/minute) is a temporary rate limit;
-            # don't fan out more requests while rate-limited.
+            # do not make more requests while rate-limited.
             raise
 
+    detail = str(last_error)[:260]
+    if saw_503 and saw_zero_quota:
+        raise VisionError(
+            'Gemini: บางโมเดลไม่มีโควตา Free Tier และบางโมเดลกำลังมีผู้ใช้งานหนาแน่น (503). '
+            'ลองใหม่ภายหลัง หรือตรวจโควตา/เลือกโมเดลที่พร้อมใช้งาน. รายละเอียดล่าสุด: ' + detail
+        ) from last_error
+    if saw_503:
+        raise VisionError(
+            'Gemini: โมเดลที่ลองรวมถึงโมเดลสำรองกำลังมีผู้ใช้งานหนาแน่น (503). '
+            'ระบบลองโมเดลสำรองจำนวนจำกัดแล้ว โปรดลองใหม่ภายหลัง หรือตั้ง ALCHEMIST_VISION_MODEL '
+            'เป็นโมเดล Flash อื่นที่มีให้ใช้. รายละเอียดล่าสุด: ' + detail
+        ) from last_error
     if saw_zero_quota:
-        detail = str(last_error)[:260]
         raise VisionError(
             'Gemini: โมเดลสำรองที่ลองไม่มีโควตา Free Tier หรือโควตาเป็น 0. '
             'โค้ดไม่สามารถเพิ่มโควตาให้ได้; เลือกโมเดลที่มี Free Tier quota สำหรับโปรเจกต์นี้ '
             'หรือเปิด Billing. รายละเอียดล่าสุด: ' + detail
         ) from last_error
-
-    raise VisionError(
-        'Gemini ตอบ HTTP 404 กับโมเดลสำรองที่ค้นพบ ลองตรวจ API Key และรายชื่อโมเดลใน Google AI Studio'
-    ) from last_error
+    if saw_404:
+        raise VisionError(
+            'Gemini ตอบ HTTP 404 กับโมเดลสำรองที่ค้นพบ ลองตรวจ API Key และรายชื่อโมเดลใน Google AI Studio'
+        ) from last_error
+    raise VisionError('Gemini ใช้งานโมเดลสำรองไม่สำเร็จ: ' + detail) from last_error
 
 def _query_ai(processed, mode):
     provider=_LOCAL_PROVIDER or os.getenv('ALCHEMIST_VISION_PROVIDER','').strip().lower()
