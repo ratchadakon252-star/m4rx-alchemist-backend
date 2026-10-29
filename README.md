@@ -14,7 +14,6 @@ Python backend สำหรับเว็บไซต์ THE ALCHEMIST NEXT —
 - `ENV_EXAMPLE.txt` — ตัวอย่างชื่อ Environment Variables (ไม่มีคีย์จริง)
 - `UPLOAD_GITHUB_RENDER_TH.md` — คู่มือทีละขั้นสำหรับ GitHub Desktop และ Render
 
-**ห้ามเปลี่ยน Repository เป็น Public โดยไม่ทบทวนไฟล์ภายใน `engine/KNOWLEDGE_SOURCES/`.**
 
 ## ทดลองใน Windows
 
