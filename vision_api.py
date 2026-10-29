@@ -109,11 +109,30 @@ def _request_json(url, headers, payload):
         with urllib.request.urlopen(req, timeout=90) as resp:
             if resp.status!=200: raise VisionError(f'Vision API HTTP {resp.status}')
             return json.load(resp)
-    except urllib.error.HTTPError as e:
-        # Never echo API credentials or arbitrary upstream body containing user data
-        if e.code in (401,403): raise VisionError('Vision API ไม่อนุญาตให้ใช้คีย์นี้ (401/403)') from e
-        if e.code==429: raise VisionError('Vision API ถูกจำกัดโควตา (429)') from e
-        raise VisionError(f'Vision API ตอบ HTTP {e.code}; ตรวจโมเดลและบริการ') from e
+       except urllib.error.HTTPError as e:
+        if e.code in (401, 403):
+            raise VisionError('Vision API ไม่อนุญาตให้ใช้คีย์นี้ (401/403)') from e
+        if e.code == 429:
+            raise VisionError('Vision API ถูกจำกัดโควตา (429)') from e
+
+        detail = ''
+        try:
+            raw = e.read(4096).decode('utf-8', 'replace')
+            obj = json.loads(raw)
+            detail = str(
+                obj.get('error', {}).get('message', '')
+            ).replace('\r', ' ').replace('\n', ' ').strip()[:240]
+        except (ValueError, AttributeError, TypeError):
+            pass
+
+        if detail:
+            raise VisionError(
+                f'Vision API HTTP {e.code}: {detail}'
+            ) from e
+
+        raise VisionError(
+            f'Vision API ตอบ HTTP {e.code}; ตรวจโมเดลและบริการ'
+        ) from e
     except urllib.error.URLError as e: raise VisionError('ติดต่อ Vision API ไม่สำเร็จ ตรวจอินเทอร์เน็ตหรือสิทธิ์เซิร์ฟเวอร์') from e
     except TimeoutError as e: raise VisionError('Vision API ตอบช้าเกินกำหนด') from e
 
