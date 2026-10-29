@@ -1,0 +1,18 @@
+# Ignore local git data and accidental secrets
+.git
+.github
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+*.key
+credentials.json
+secrets.json
+vision.env*
+__pycache__
+*.pyc
+.pytest_cache
+.venv
+venv
+*.log

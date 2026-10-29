@@ -1,0 +1,32 @@
+{
+  "id": "MC03",
+  "name": "Continuation",
+  "version": "0.2.0",
+  "role": "BACKLOG",
+  "source_status": "REVIEW_PARTIAL",
+  "enabled": false,
+  "source_variant": "Mention of displacement without raid only; insufficient formal continuation rule",
+  "sources": [
+    {
+      "file_name": "ICT_Alchemist Trading Note.pdf",
+      "sha256": "536da52e83992ca7374c26a00843bddda39001ca7ef8542e9d450a98acdeabf9",
+      "reviewed_by": "Assistant source-text + rendered diagram review, 2026-10-28; not independent human certification",
+      "pages": [
+        373
+      ],
+      "scope": "Mention of displacement without raid only; insufficient formal continuation rule"
+    }
+  ],
+  "dependencies": [],
+  "rules": [],
+  "policy_overlays": [
+    "P1 XAU mode1/9 only",
+    "P1 provisional RR1>=1.40 RR2>=2.50",
+    "P1 structure-first preferred SL270–355, targets500/1000 M4RX points",
+    "Explicit anchored stop buffer only; no default broker values",
+    "Event expiry and fresh-only policy; candidate not executable"
+  ],
+  "limitations": [
+    "No enabling from a one-paragraph mention"
+  ]
+}

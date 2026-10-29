@@ -1,0 +1,39 @@
+{
+  "id": "MC04",
+  "name": "FVG as POI",
+  "version": "0.2.0",
+  "role": "POI",
+  "source_status": "VERIFIED_SCOPED",
+  "enabled": true,
+  "source_variant": "Three consecutive closed-bar wick gap; CE midpoint only",
+  "sources": [
+    {
+      "file_name": "ICT_Alchemist Trading Note.pdf",
+      "sha256": "536da52e83992ca7374c26a00843bddda39001ca7ef8542e9d450a98acdeabf9",
+      "reviewed_by": "Assistant source-text + rendered diagram review, 2026-10-28; not independent human certification",
+      "pages": [
+        78,
+        79,
+        90
+      ],
+      "scope": "Three consecutive closed-bar wick gap; CE midpoint only"
+    }
+  ],
+  "dependencies": [],
+  "rules": [
+    "C1/C3 non-overlap, directional C2, C3 closed",
+    "No ATR threshold inherited from book example selection",
+    "CE from verified bounds; never a standalone entry trigger"
+  ],
+  "policy_overlays": [
+    "P1 XAU mode1/9 only",
+    "P1 provisional RR1>=1.40 RR2>=2.50",
+    "P1 structure-first preferred SL270–355, targets500/1000 M4RX points",
+    "Explicit anchored stop buffer only; no default broker values",
+    "Event expiry and fresh-only policy; candidate not executable"
+  ],
+  "limitations": [
+    "Not a standalone trade model",
+    "Only supplied raw-bar annotations, no image extraction"
+  ]
+}

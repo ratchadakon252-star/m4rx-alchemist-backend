@@ -1,0 +1,92 @@
+{
+  "mode": 2,
+  "readiness": "CONTEXT_ONLY",
+  "reasons": [
+    "HTF_CONTEXT_ONLY_NO_ORDERS"
+  ],
+  "decision": null,
+  "snapshot": null,
+  "scan": null,
+  "context": [
+    {
+      "tf": "H1",
+      "last_closed_at": "2026-01-05T10:00:00+00:00",
+      "last_closed_high": "4006.7",
+      "last_closed_low": "3994",
+      "last_closed_close": "4006",
+      "confirmed_pivots": [],
+      "source_hash": "f714bdd26add9b2f0b7b0d25e90c93ec2bda857f056898861e4f4d9cb1d0cd46",
+      "meaning": "Observed context only; not a trade/directional guarantee"
+    },
+    {
+      "tf": "M15",
+      "last_closed_at": "2026-01-05T10:15:00+00:00",
+      "last_closed_high": "4006.6",
+      "last_closed_low": "4000",
+      "last_closed_close": "4001",
+      "confirmed_pivots": [
+        [
+          "HIGH",
+          "4006.7",
+          "2026-01-05T10:15:00+00:00"
+        ]
+      ],
+      "source_hash": "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+      "meaning": "Observed context only; not a trade/directional guarantee"
+    },
+    {
+      "tf": "M5",
+      "last_closed_at": "2026-01-05T10:20:00+00:00",
+      "last_closed_high": "4003",
+      "last_closed_low": "4000.5",
+      "last_closed_close": "4002",
+      "confirmed_pivots": [
+        [
+          "LOW",
+          "3994",
+          "2026-01-05T09:15:00+00:00"
+        ],
+        [
+          "HIGH",
+          "4003",
+          "2026-01-05T09:25:00+00:00"
+        ],
+        [
+          "LOW",
+          "3999",
+          "2026-01-05T09:30:00+00:00"
+        ],
+        [
+          "HIGH",
+          "4006.5",
+          "2026-01-05T09:40:00+00:00"
+        ],
+        [
+          "LOW",
+          "4004",
+          "2026-01-05T09:50:00+00:00"
+        ],
+        [
+          "HIGH",
+          "4006.7",
+          "2026-01-05T10:05:00+00:00"
+        ],
+        [
+          "LOW",
+          "4000",
+          "2026-01-05T10:20:00+00:00"
+        ]
+      ],
+      "source_hash": "3abeaa0f6fe61e59d4fc3dcb3df6363ff2d5b73542f00d4ccc7eb31707b27ec9",
+      "meaning": "Observed context only; not a trade/directional guarantee"
+    }
+  ],
+  "sides": {},
+  "source_hashes": [
+    "f714bdd26add9b2f0b7b0d25e90c93ec2bda857f056898861e4f4d9cb1d0cd46",
+    "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+    "3abeaa0f6fe61e59d4fc3dcb3df6363ff2d5b73542f00d4ccc7eb31707b27ec9"
+  ],
+  "release": "PARTIAL_DEVELOPER_PREVIEW",
+  "live_ready": false
+}

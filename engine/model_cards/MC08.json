@@ -1,0 +1,46 @@
+{
+  "id": "MC08",
+  "name": "Unicorn contained FVG variant",
+  "version": "0.2.0",
+  "role": "ENTRY_MODEL",
+  "source_status": "VERIFIED_SCOPED",
+  "enabled": true,
+  "source_variant": "Book p405 reported definition: FVG fully inside valid Breaker; NOT partial-overlap backtest selection rules",
+  "sources": [
+    {
+      "file_name": "ICT_Alchemist Trading Note.pdf",
+      "sha256": "536da52e83992ca7374c26a00843bddda39001ca7ef8542e9d450a98acdeabf9",
+      "reviewed_by": "Assistant source-text + rendered diagram review, 2026-10-28; not independent human certification",
+      "pages": [
+        78,
+        79,
+        108,
+        111,
+        405,
+        406
+      ],
+      "scope": "Book p405 reported definition: FVG fully inside valid Breaker; NOT partial-overlap backtest selection rules"
+    }
+  ],
+  "dependencies": [
+    "MC04",
+    "MC07"
+  ],
+  "rules": [
+    "All MC07 chronology must pass",
+    "FVG endpoints both inside Breaker whole range",
+    "FVG midpoint/near edge only; availability after break and C3 close"
+  ],
+  "policy_overlays": [
+    "P1 XAU mode1/9 only",
+    "P1 provisional RR1>=1.40 RR2>=2.50",
+    "P1 structure-first preferred SL270–355, targets500/1000 M4RX points",
+    "Explicit anchored stop buffer only; no default broker values",
+    "Event expiry and fresh-only policy; candidate not executable"
+  ],
+  "limitations": [
+    "Partial overlap variant disabled",
+    "Book 72/35-bar windows, fixed .50 buffer and .30 spread are author screening assumptions, not imported",
+    "Not the complete chapter38 backtest strategy"
+  ]
+}

@@ -1,0 +1,16 @@
+# Cloud hosting only; add these in the provider's Environment/Secrets UI, never to public HTML
+ALCHEMIST_CLOUD_MODE=1
+ALCHEMIST_ALLOWED_ORIGIN=https://YOUR-SITE.pages.dev
+ALCHEMIST_API_TOKEN=GENERATE_PRIVATE_LONG_RANDOM_TOKEN
+
+# Choose only one Vision provider. Gemini Pro app / ChatGPT Plus do not include API credit automatically.
+ALCHEMIST_VISION_PROVIDER=gemini
+ALCHEMIST_VISION_API_KEY=YOUR_PRIVATE_API_KEY
+ALCHEMIST_VISION_MODEL=gemini-2.5-flash
+
+# Alternative provider:
+# ALCHEMIST_VISION_PROVIDER=openai
+# ALCHEMIST_VISION_MODEL=gpt-4.1-mini
+# ALCHEMIST_VISION_API_KEY=YOUR_PRIVATE_OPENAI_API_KEY
+
+# PORT is usually injected by cloud host, optional locally.

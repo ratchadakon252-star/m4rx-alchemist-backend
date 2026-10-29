@@ -1,0 +1,49 @@
+{
+  "id": "MC05",
+  "name": "iFVG closed inversion retest — guarded R&D",
+  "version": "0.4.0",
+  "role": "ENTRY_MODEL",
+  "source_status": "VERIFIED_SCOPED",
+  "enabled": true,
+  "source_variant": "Book 2024 body-close beyond far boundary; NEXT structural swing/targets overlays; no future reaction",
+  "sources": [
+    {
+      "file_name": "ICT_Alchemist Trading Note.pdf",
+      "sha256": "536da52e83992ca7374c26a00843bddda39001ca7ef8542e9d450a98acdeabf9",
+      "pages": [
+        78,
+        79,
+        28,
+        29,
+        460,
+        461
+      ],
+      "scope": "Original opposing three-bar FVG + closed inversion; source/author variant separation",
+      "reviewed_by": "Assistant text pages + rendered p460 review 2026-10-28; not independent market validation"
+    }
+  ],
+  "dependencies": [
+    "MC04"
+  ],
+  "rules": [
+    "Original FVG geometry must be established before inversion",
+    "BUY: bearish gap closes through upper bound; SELL: bullish gap closes through lower bound",
+    "Protected confirmed swing before inversion required; price/targets/expiry retain shared hard gates",
+    "Entry at inverted gap near boundary or verified CE; no future rejection required in Mode9"
+  ],
+  "policy_overlays": [
+    "R&D source-linked composition, not proof of trading edge",
+    "P1 structure-first SL/targets and provisional RR",
+    "No buffer or broker values inferred from book examples",
+    "Native visible span only; closed-bar pivot and freshness checks"
+  ],
+  "limitations": [
+    "Not full chapter43 backtest screening strategy",
+    "No 36/35/12-bar hindsight selection thresholds imported",
+    "Independent ground truth/real market OHLC still absent",
+    "Enabled in P4 R&D scope only after synthetic predicate/integration tests; real validation BLOCKED"
+  ],
+  "execution_scopes": [
+    "P4"
+  ]
+}

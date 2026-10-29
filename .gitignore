@@ -1,0 +1,32 @@
+# User secrets / machine-specific settings (NEVER COMMIT)
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+credentials.json
+secrets.json
+vision.env*
+
+# Python / editors / generated local artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+.mypy_cache/
+.ruff_cache/
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+
+# Local outputs, not knowledge sources
+*.sqlite3
+*.db
+local_uploads/
+uploads/

@@ -1,0 +1,33 @@
+{
+  "id": "MC01",
+  "name": "ICT2022",
+  "version": "0.2.0",
+  "role": "BACKLOG",
+  "source_status": "REVIEW_PARTIAL",
+  "enabled": false,
+  "source_variant": "Book ch35 original five-step model; bias/time criteria unresolved",
+  "sources": [
+    {
+      "file_name": "ICT_Alchemist Trading Note.pdf",
+      "sha256": "536da52e83992ca7374c26a00843bddda39001ca7ef8542e9d450a98acdeabf9",
+      "reviewed_by": "Assistant source-text + rendered diagram review, 2026-10-28; not independent human certification",
+      "pages": [
+        372,
+        373
+      ],
+      "scope": "Book ch35 original five-step model; bias/time criteria unresolved"
+    }
+  ],
+  "dependencies": [],
+  "rules": [],
+  "policy_overlays": [
+    "P1 XAU mode1/9 only",
+    "P1 provisional RR1>=1.40 RR2>=2.50",
+    "P1 structure-first preferred SL270–355, targets500/1000 M4RX points",
+    "Explicit anchored stop buffer only; no default broker values",
+    "Event expiry and fresh-only policy; candidate not executable"
+  ],
+  "limitations": [
+    "Bias and time gates differ from generic P1 description; not implemented"
+  ]
+}

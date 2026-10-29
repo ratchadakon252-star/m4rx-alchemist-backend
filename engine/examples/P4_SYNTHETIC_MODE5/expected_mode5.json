@@ -1,0 +1,3865 @@
+{
+  "mode": 5,
+  "readiness": "TRADE_CANDIDATE",
+  "reasons": [
+    "MODEL_UNVERIFIED:MISSING_REFERENCE",
+    "ENTRY_UNVERIFIED",
+    "TRIGGER_UNVERIFIED",
+    "POI_UNVERIFIED:POI_STATE_CHRONOLOGY_UNVERIFIED",
+    "EXPIRY_UNVERIFIED:EXPIRY_PRECEDES_FORMATION",
+    "ORDER_ENTRY_DEPENDENCY_UNKNOWN",
+    "STRUCTURAL_SL_UNVERIFIED",
+    "TARGET_PRICE_UNVERIFIED",
+    "RR_DEPENDENCY_UNKNOWN",
+    "BARRIER_UNVERIFIED:BARRIER_PRICE_DEPENDENCY"
+  ],
+  "decision": {
+    "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+    "evaluation_id": "4e14a5b8c82d7a3e497ca1e0357e03d1fd2a94f0b9b2fb324c89d9fa1d23b198",
+    "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+    "state": "TRADE_CANDIDATE",
+    "selected_id": "SELL_MC05_gap6_inv14",
+    "candidates": [
+      {
+        "seed": {
+          "id": "SELL_MC05_gap6_inv14",
+          "model_id": "MC05",
+          "side": "SELL",
+          "route": "REVERSAL",
+          "refs": {
+            "c1": "b4",
+            "c2": "b5",
+            "c3": "b6",
+            "inversion": "b14",
+            "protected_left": "b10",
+            "protected_bar": "b11",
+            "protected_right": "b12",
+            "swing": "SELL_MC05_gap6_inv14:swing",
+            "buffer": "SELL_MC05_gap6_inv14:buffer",
+            "expiry": "SELL_MC05_gap6_inv14:p4expiry",
+            "tp1": "SELL_MC05_gap6_inv14:p4tp1",
+            "tp2": "SELL_MC05_gap6_inv14:p4tp2",
+            "poi_state": "SELL_MC05_gap6_inv14:m1poi",
+            "barrier_audit": "SELL_MC05_gap6_inv14:p4barrieraudit"
+          },
+          "entry_rule": "NEAR_EDGE",
+          "order_requested": "AUTO",
+          "barrier_refs": [],
+          "leg_bar_refs": [
+            "b11",
+            "b12",
+            "b13",
+            "b14"
+          ],
+          "precision_refs": {
+            "c1": "m1b3",
+            "c2": "m1b4",
+            "c3": "m1b5",
+            "break": "m1b4",
+            "level": "SELL_MC05_gap6_inv14:m1level"
+          }
+        },
+        "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+        "card_hash": "bf3c421038b08f7a9403ff78035ad1ae4c5ee288a21708a5df72fa8d11827202",
+        "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+        "gates": [
+          {
+            "name": "profile",
+            "status": "PASS",
+            "reason": "XAUUSD_MVP",
+            "evidence_ids": []
+          },
+          {
+            "name": "input",
+            "status": "PASS",
+            "reason": "SNAPSHOT_IDENTITY",
+            "evidence_ids": []
+          },
+          {
+            "name": "model",
+            "status": "PASS",
+            "reason": "SCOPED_MODEL_PROOF",
+            "evidence_ids": [
+              "b4",
+              "b5",
+              "b6",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "route",
+            "status": "PASS",
+            "reason": "ROUTE_DECLARED",
+            "evidence_ids": []
+          },
+          {
+            "name": "entry",
+            "status": "PASS",
+            "reason": "ANCHORED_NEAR_EDGE",
+            "evidence_ids": []
+          },
+          {
+            "name": "trigger",
+            "status": "PASS",
+            "reason": "CLOSED_BREAK_CONFIRMED",
+            "evidence_ids": []
+          },
+          {
+            "name": "swing",
+            "status": "PASS",
+            "reason": "ANCHORED_SWING",
+            "evidence_ids": [
+              "SELL_MC05_gap6_inv14:swing"
+            ]
+          },
+          {
+            "name": "buffer",
+            "status": "PASS",
+            "reason": "ANCHORED_BUFFER",
+            "evidence_ids": [
+              "SELL_MC05_gap6_inv14:buffer"
+            ]
+          },
+          {
+            "name": "tp1",
+            "status": "PASS",
+            "reason": "ANCHORED_TP1",
+            "evidence_ids": [
+              "SELL_MC05_gap6_inv14:p4tp1"
+            ]
+          },
+          {
+            "name": "tp2",
+            "status": "PASS",
+            "reason": "ANCHORED_TP2",
+            "evidence_ids": [
+              "SELL_MC05_gap6_inv14:p4tp2"
+            ]
+          },
+          {
+            "name": "swing_binding",
+            "status": "PASS",
+            "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+            "evidence_ids": []
+          },
+          {
+            "name": "sl",
+            "status": "PASS",
+            "reason": "DERIVED_SWING_PLUS_BUFFER",
+            "evidence_ids": [
+              "SELL_MC05_gap6_inv14:swing",
+              "SELL_MC05_gap6_inv14:buffer"
+            ]
+          },
+          {
+            "name": "poi",
+            "status": "PASS",
+            "reason": "FRESH_ANNOTATED",
+            "evidence_ids": [
+              "SELL_MC05_gap6_inv14:m1poi"
+            ]
+          },
+          {
+            "name": "expiry",
+            "status": "PASS",
+            "reason": "EVENT_EXPIRY_NOT_UNATTENDED_READY",
+            "evidence_ids": [
+              "SELL_MC05_gap6_inv14:p4expiry"
+            ]
+          },
+          {
+            "name": "order",
+            "status": "PASS",
+            "reason": "SNAPSHOT_ORDER_PASS",
+            "evidence_ids": [
+              "quote"
+            ]
+          },
+          {
+            "name": "stop_geometry",
+            "status": "PASS",
+            "reason": "STRUCTURAL_RISK_PASS",
+            "evidence_ids": []
+          },
+          {
+            "name": "target_geometry",
+            "status": "PASS",
+            "reason": "TARGET_GEOMETRY_CHECK",
+            "evidence_ids": []
+          },
+          {
+            "name": "rr",
+            "status": "PASS",
+            "reason": "RR_PROVISIONAL_PASS",
+            "evidence_ids": []
+          },
+          {
+            "name": "barriers",
+            "status": "PASS",
+            "reason": "FIRST_BARRIER_CHECKED",
+            "evidence_ids": []
+          }
+        ],
+        "prices": {
+          "entry": "4004.6",
+          "swing": "4006.7",
+          "buffer": "0.30",
+          "sl": "4007.00",
+          "tp1": "3999",
+          "tp2": "3994",
+          "poi_low": "4004.6",
+          "poi_high": "4004.8"
+        },
+        "rr1": "2.333333333333333333333333333",
+        "rr2": "4.416666666666666666666666667",
+        "stop_points": "240",
+        "order": "SELL_LIMIT",
+        "state": "TRADE_CANDIDATE",
+        "preferences": [
+          "TIGHT_STOP_SPREAD_CHECK",
+          "TP1_PREFERENCE_MISMATCH",
+          "TP2_PREFERENCE_MISMATCH"
+        ],
+        "incomplete_fields": [],
+        "broker_checks": [
+          {
+            "name": "broker_quote",
+            "status": "UNKNOWN",
+            "reason": "BROKER_QUOTES_UNVERIFIED",
+            "evidence_ids": []
+          }
+        ],
+        "live_ready": false,
+        "validation_digest": "abc4c3bfa5d5d99a14d57bf8c084114ff42148ae23307f770b8ad44a2325467e"
+      },
+      {
+        "seed": {
+          "id": "SELL_MC05_gap7_inv13",
+          "model_id": "MC05",
+          "side": "SELL",
+          "route": "REVERSAL",
+          "refs": {
+            "c1": "b5",
+            "c2": "b6",
+            "c3": "b7",
+            "inversion": "b13",
+            "protected_left": "b10",
+            "protected_bar": "b11",
+            "protected_right": "b12",
+            "swing": "SELL_MC05_gap7_inv13:swing",
+            "buffer": "SELL_MC05_gap7_inv13:buffer",
+            "expiry": "SELL_MC05_gap7_inv13:p4expiry",
+            "tp1": "SELL_MC05_gap7_inv13:p4tp1",
+            "tp2": "SELL_MC05_gap7_inv13:p4tp2",
+            "poi_state": "SELL_MC05_gap7_inv13:m1poi",
+            "barrier_audit": "SELL_MC05_gap7_inv13:p4barrieraudit"
+          },
+          "entry_rule": "NEAR_EDGE",
+          "order_requested": "AUTO",
+          "barrier_refs": [],
+          "leg_bar_refs": [
+            "b11",
+            "b12",
+            "b13"
+          ],
+          "precision_refs": {
+            "c1": "m1b3",
+            "c2": "m1b4",
+            "c3": "m1b5",
+            "break": "m1b4",
+            "level": "SELL_MC05_gap7_inv13:m1level"
+          }
+        },
+        "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+        "card_hash": "bf3c421038b08f7a9403ff78035ad1ae4c5ee288a21708a5df72fa8d11827202",
+        "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+        "gates": [
+          {
+            "name": "profile",
+            "status": "PASS",
+            "reason": "XAUUSD_MVP",
+            "evidence_ids": []
+          },
+          {
+            "name": "input",
+            "status": "PASS",
+            "reason": "SNAPSHOT_IDENTITY",
+            "evidence_ids": []
+          },
+          {
+            "name": "model",
+            "status": "PASS",
+            "reason": "SCOPED_MODEL_PROOF",
+            "evidence_ids": [
+              "b5",
+              "b6",
+              "b7",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ]
+          },
+          {
+            "name": "route",
+            "status": "PASS",
+            "reason": "ROUTE_DECLARED",
+            "evidence_ids": []
+          },
+          {
+            "name": "entry",
+            "status": "PASS",
+            "reason": "ANCHORED_NEAR_EDGE",
+            "evidence_ids": []
+          },
+          {
+            "name": "trigger",
+            "status": "PASS",
+            "reason": "CLOSED_BREAK_CONFIRMED",
+            "evidence_ids": []
+          },
+          {
+            "name": "swing",
+            "status": "PASS",
+            "reason": "ANCHORED_SWING",
+            "evidence_ids": [
+              "SELL_MC05_gap7_inv13:swing"
+            ]
+          },
+          {
+            "name": "buffer",
+            "status": "PASS",
+            "reason": "ANCHORED_BUFFER",
+            "evidence_ids": [
+              "SELL_MC05_gap7_inv13:buffer"
+            ]
+          },
+          {
+            "name": "tp1",
+            "status": "PASS",
+            "reason": "ANCHORED_TP1",
+            "evidence_ids": [
+              "SELL_MC05_gap7_inv13:p4tp1"
+            ]
+          },
+          {
+            "name": "tp2",
+            "status": "PASS",
+            "reason": "ANCHORED_TP2",
+            "evidence_ids": [
+              "SELL_MC05_gap7_inv13:p4tp2"
+            ]
+          },
+          {
+            "name": "swing_binding",
+            "status": "PASS",
+            "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+            "evidence_ids": []
+          },
+          {
+            "name": "sl",
+            "status": "PASS",
+            "reason": "DERIVED_SWING_PLUS_BUFFER",
+            "evidence_ids": [
+              "SELL_MC05_gap7_inv13:swing",
+              "SELL_MC05_gap7_inv13:buffer"
+            ]
+          },
+          {
+            "name": "poi",
+            "status": "PASS",
+            "reason": "FRESH_ANNOTATED",
+            "evidence_ids": [
+              "SELL_MC05_gap7_inv13:m1poi"
+            ]
+          },
+          {
+            "name": "expiry",
+            "status": "PASS",
+            "reason": "EVENT_EXPIRY_NOT_UNATTENDED_READY",
+            "evidence_ids": [
+              "SELL_MC05_gap7_inv13:p4expiry"
+            ]
+          },
+          {
+            "name": "order",
+            "status": "PASS",
+            "reason": "SNAPSHOT_ORDER_PASS",
+            "evidence_ids": [
+              "quote"
+            ]
+          },
+          {
+            "name": "stop_geometry",
+            "status": "PASS",
+            "reason": "STRUCTURAL_RISK_PASS",
+            "evidence_ids": []
+          },
+          {
+            "name": "target_geometry",
+            "status": "PASS",
+            "reason": "TARGET_GEOMETRY_CHECK",
+            "evidence_ids": []
+          },
+          {
+            "name": "rr",
+            "status": "PASS",
+            "reason": "RR_PROVISIONAL_PASS",
+            "evidence_ids": []
+          },
+          {
+            "name": "barriers",
+            "status": "PASS",
+            "reason": "FIRST_BARRIER_CHECKED",
+            "evidence_ids": []
+          }
+        ],
+        "prices": {
+          "entry": "4004.6",
+          "swing": "4006.7",
+          "buffer": "0.30",
+          "sl": "4007.00",
+          "tp1": "3999",
+          "tp2": "3994",
+          "poi_low": "4004.6",
+          "poi_high": "4004.8"
+        },
+        "rr1": "2.333333333333333333333333333",
+        "rr2": "4.416666666666666666666666667",
+        "stop_points": "240",
+        "order": "SELL_LIMIT",
+        "state": "TRADE_CANDIDATE",
+        "preferences": [
+          "TIGHT_STOP_SPREAD_CHECK",
+          "TP1_PREFERENCE_MISMATCH",
+          "TP2_PREFERENCE_MISMATCH"
+        ],
+        "incomplete_fields": [],
+        "broker_checks": [
+          {
+            "name": "broker_quote",
+            "status": "UNKNOWN",
+            "reason": "BROKER_QUOTES_UNVERIFIED",
+            "evidence_ids": []
+          }
+        ],
+        "live_ready": false,
+        "validation_digest": "5969938e1d586c285fa0d07b5543beda38e98e91ec291771fb666dd489fc2847"
+      },
+      {
+        "seed": {
+          "id": "SELL_MC07_raid11_break13_gap14",
+          "model_id": "MC07",
+          "side": "SELL",
+          "route": "REVERSAL",
+          "refs": {
+            "origin": "b8",
+            "raid": "b11",
+            "break": "b13",
+            "c1": "b12",
+            "c2": "b13",
+            "c3": "b14",
+            "prior": "SELL_MC07_raid11_break13_gap14:prior",
+            "inner": "SELL_MC07_raid11_break13_gap14:inner",
+            "swing": "SELL_MC07_raid11_break13_gap14:swing",
+            "buffer": "SELL_MC07_raid11_break13_gap14:buffer",
+            "poi_state": "SELL_MC07_raid11_break13_gap14:m1poi",
+            "latest_swing": "SELL_MC07_raid11_break13_gap14:audit",
+            "barrier_audit": "SELL_MC07_raid11_break13_gap14:p4barrieraudit",
+            "expiry": "SELL_MC07_raid11_break13_gap14:p4expiry",
+            "tp1": "SELL_MC07_raid11_break13_gap14:p4tp1",
+            "tp2": "SELL_MC07_raid11_break13_gap14:p4tp2"
+          },
+          "entry_rule": "NEAR_EDGE",
+          "order_requested": "AUTO",
+          "barrier_refs": [],
+          "leg_bar_refs": [
+            "b11",
+            "b12",
+            "b13"
+          ],
+          "precision_refs": {
+            "c1": "m1b3",
+            "c2": "m1b4",
+            "c3": "m1b5",
+            "break": "m1b4",
+            "level": "SELL_MC07_raid11_break13_gap14:m1level"
+          }
+        },
+        "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+        "card_hash": "0634643553510c43ba9331d488f3ed6da0e5f0e8431aa6697f89b797d9b576d4",
+        "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+        "gates": [
+          {
+            "name": "profile",
+            "status": "PASS",
+            "reason": "XAUUSD_MVP",
+            "evidence_ids": []
+          },
+          {
+            "name": "input",
+            "status": "PASS",
+            "reason": "SNAPSHOT_IDENTITY",
+            "evidence_ids": []
+          },
+          {
+            "name": "model",
+            "status": "PASS",
+            "reason": "SCOPED_MODEL_PROOF",
+            "evidence_ids": [
+              "b12",
+              "b13",
+              "b14",
+              "SELL_MC07_raid11_break13_gap14:prior",
+              "SELL_MC07_raid11_break13_gap14:inner",
+              "b8",
+              "b11",
+              "b13"
+            ]
+          },
+          {
+            "name": "route",
+            "status": "PASS",
+            "reason": "ROUTE_DECLARED",
+            "evidence_ids": []
+          },
+          {
+            "name": "entry",
+            "status": "PASS",
+            "reason": "ANCHORED_NEAR_EDGE",
+            "evidence_ids": []
+          },
+          {
+            "name": "trigger",
+            "status": "PASS",
+            "reason": "CLOSED_BREAK_CONFIRMED",
+            "evidence_ids": []
+          },
+          {
+            "name": "swing",
+            "status": "PASS",
+            "reason": "ANCHORED_SWING",
+            "evidence_ids": [
+              "SELL_MC07_raid11_break13_gap14:swing"
+            ]
+          },
+          {
+            "name": "buffer",
+            "status": "PASS",
+            "reason": "ANCHORED_BUFFER",
+            "evidence_ids": [
+              "SELL_MC07_raid11_break13_gap14:buffer"
+            ]
+          },
+          {
+            "name": "tp1",
+            "status": "PASS",
+            "reason": "ANCHORED_TP1",
+            "evidence_ids": [
+              "SELL_MC07_raid11_break13_gap14:p4tp1"
+            ]
+          },
+          {
+            "name": "tp2",
+            "status": "PASS",
+            "reason": "ANCHORED_TP2",
+            "evidence_ids": [
+              "SELL_MC07_raid11_break13_gap14:p4tp2"
+            ]
+          },
+          {
+            "name": "swing_binding",
+            "status": "PASS",
+            "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+            "evidence_ids": []
+          },
+          {
+            "name": "sl",
+            "status": "PASS",
+            "reason": "DERIVED_SWING_PLUS_BUFFER",
+            "evidence_ids": [
+              "SELL_MC07_raid11_break13_gap14:swing",
+              "SELL_MC07_raid11_break13_gap14:buffer"
+            ]
+          },
+          {
+            "name": "poi",
+            "status": "PASS",
+            "reason": "FRESH_ANNOTATED",
+            "evidence_ids": [
+              "SELL_MC07_raid11_break13_gap14:m1poi"
+            ]
+          },
+          {
+            "name": "expiry",
+            "status": "PASS",
+            "reason": "EVENT_EXPIRY_NOT_UNATTENDED_READY",
+            "evidence_ids": [
+              "SELL_MC07_raid11_break13_gap14:p4expiry"
+            ]
+          },
+          {
+            "name": "order",
+            "status": "PASS",
+            "reason": "SNAPSHOT_ORDER_PASS",
+            "evidence_ids": [
+              "quote"
+            ]
+          },
+          {
+            "name": "stop_geometry",
+            "status": "PASS",
+            "reason": "STRUCTURAL_RISK_PASS",
+            "evidence_ids": []
+          },
+          {
+            "name": "target_geometry",
+            "status": "PASS",
+            "reason": "TARGET_GEOMETRY_CHECK",
+            "evidence_ids": []
+          },
+          {
+            "name": "rr",
+            "status": "PASS",
+            "reason": "RR_PROVISIONAL_PASS",
+            "evidence_ids": []
+          },
+          {
+            "name": "barriers",
+            "status": "PASS",
+            "reason": "FIRST_BARRIER_CHECKED",
+            "evidence_ids": []
+          }
+        ],
+        "prices": {
+          "entry": "4004.6",
+          "swing": "4006.7",
+          "buffer": "0.30",
+          "sl": "4007.00",
+          "tp1": "3999",
+          "tp2": "3994",
+          "poi_low": "4004.6",
+          "poi_high": "4004.8"
+        },
+        "rr1": "2.333333333333333333333333333",
+        "rr2": "4.416666666666666666666666667",
+        "stop_points": "240",
+        "order": "SELL_LIMIT",
+        "state": "TRADE_CANDIDATE",
+        "preferences": [
+          "TIGHT_STOP_SPREAD_CHECK",
+          "TP1_PREFERENCE_MISMATCH",
+          "TP2_PREFERENCE_MISMATCH"
+        ],
+        "incomplete_fields": [],
+        "broker_checks": [
+          {
+            "name": "broker_quote",
+            "status": "UNKNOWN",
+            "reason": "BROKER_QUOTES_UNVERIFIED",
+            "evidence_ids": []
+          }
+        ],
+        "live_ready": false,
+        "validation_digest": "fe5ffee822cbdf1b43fe1bedfda5409e8a32e92748c00b152191faa5d7e1bbd0"
+      },
+      {
+        "seed": {
+          "id": "SELL_MC08_raid11_break13_gap14",
+          "model_id": "MC08",
+          "side": "SELL",
+          "route": "REVERSAL",
+          "refs": {
+            "origin": "b8",
+            "raid": "b11",
+            "break": "b13",
+            "c1": "b12",
+            "c2": "b13",
+            "c3": "b14",
+            "prior": "SELL_MC08_raid11_break13_gap14:prior",
+            "inner": "SELL_MC08_raid11_break13_gap14:inner",
+            "swing": "SELL_MC08_raid11_break13_gap14:swing",
+            "buffer": "SELL_MC08_raid11_break13_gap14:buffer",
+            "poi_state": "SELL_MC08_raid11_break13_gap14:p4poi",
+            "latest_swing": "SELL_MC08_raid11_break13_gap14:audit",
+            "barrier_audit": "SELL_MC08_raid11_break13_gap14:p4barrieraudit",
+            "expiry": "SELL_MC08_raid11_break13_gap14:p4expiry",
+            "tp1": "SELL_MC08_raid11_break13_gap14:p4tp1",
+            "tp2": "SELL_MC08_raid11_break13_gap14:p4tp2"
+          },
+          "entry_rule": "NEAR_EDGE",
+          "order_requested": "AUTO",
+          "barrier_refs": [],
+          "leg_bar_refs": [
+            "b11",
+            "b12",
+            "b13"
+          ],
+          "precision_refs": {}
+        },
+        "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+        "card_hash": "e64440d571b599d16402190904d9cbaa871fa97bd6875eb3599b6922dccd5bc1",
+        "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+        "gates": [
+          {
+            "name": "profile",
+            "status": "PASS",
+            "reason": "XAUUSD_MVP",
+            "evidence_ids": []
+          },
+          {
+            "name": "input",
+            "status": "PASS",
+            "reason": "SNAPSHOT_IDENTITY",
+            "evidence_ids": []
+          },
+          {
+            "name": "model",
+            "status": "UNKNOWN",
+            "reason": "MODEL_UNVERIFIED:MISSING_REFERENCE",
+            "evidence_ids": [
+              "b12",
+              "b13",
+              "b14",
+              "SELL_MC08_raid11_break13_gap14:prior",
+              "SELL_MC08_raid11_break13_gap14:inner",
+              "b8",
+              "b11",
+              "b13"
+            ]
+          },
+          {
+            "name": "route",
+            "status": "PASS",
+            "reason": "ROUTE_DECLARED",
+            "evidence_ids": []
+          },
+          {
+            "name": "entry",
+            "status": "UNKNOWN",
+            "reason": "ENTRY_UNVERIFIED",
+            "evidence_ids": []
+          },
+          {
+            "name": "trigger",
+            "status": "UNKNOWN",
+            "reason": "TRIGGER_UNVERIFIED",
+            "evidence_ids": []
+          },
+          {
+            "name": "swing",
+            "status": "PASS",
+            "reason": "ANCHORED_SWING",
+            "evidence_ids": [
+              "SELL_MC08_raid11_break13_gap14:swing"
+            ]
+          },
+          {
+            "name": "buffer",
+            "status": "PASS",
+            "reason": "ANCHORED_BUFFER",
+            "evidence_ids": [
+              "SELL_MC08_raid11_break13_gap14:buffer"
+            ]
+          },
+          {
+            "name": "tp1",
+            "status": "PASS",
+            "reason": "ANCHORED_TP1",
+            "evidence_ids": [
+              "SELL_MC08_raid11_break13_gap14:p4tp1"
+            ]
+          },
+          {
+            "name": "tp2",
+            "status": "PASS",
+            "reason": "ANCHORED_TP2",
+            "evidence_ids": [
+              "SELL_MC08_raid11_break13_gap14:p4tp2"
+            ]
+          },
+          {
+            "name": "swing_binding",
+            "status": "PASS",
+            "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+            "evidence_ids": []
+          },
+          {
+            "name": "sl",
+            "status": "PASS",
+            "reason": "DERIVED_SWING_PLUS_BUFFER",
+            "evidence_ids": [
+              "SELL_MC08_raid11_break13_gap14:swing",
+              "SELL_MC08_raid11_break13_gap14:buffer"
+            ]
+          },
+          {
+            "name": "poi",
+            "status": "UNKNOWN",
+            "reason": "POI_UNVERIFIED:POI_STATE_CHRONOLOGY_UNVERIFIED",
+            "evidence_ids": []
+          },
+          {
+            "name": "expiry",
+            "status": "UNKNOWN",
+            "reason": "EXPIRY_UNVERIFIED:EXPIRY_PRECEDES_FORMATION",
+            "evidence_ids": []
+          },
+          {
+            "name": "order",
+            "status": "UNKNOWN",
+            "reason": "ORDER_ENTRY_DEPENDENCY_UNKNOWN",
+            "evidence_ids": []
+          },
+          {
+            "name": "stop_geometry",
+            "status": "UNKNOWN",
+            "reason": "STRUCTURAL_SL_UNVERIFIED",
+            "evidence_ids": []
+          },
+          {
+            "name": "target_geometry",
+            "status": "UNKNOWN",
+            "reason": "TARGET_PRICE_UNVERIFIED",
+            "evidence_ids": []
+          },
+          {
+            "name": "rr",
+            "status": "UNKNOWN",
+            "reason": "RR_DEPENDENCY_UNKNOWN",
+            "evidence_ids": []
+          },
+          {
+            "name": "barriers",
+            "status": "UNKNOWN",
+            "reason": "BARRIER_UNVERIFIED:BARRIER_PRICE_DEPENDENCY",
+            "evidence_ids": []
+          }
+        ],
+        "prices": {
+          "entry": null,
+          "swing": "4006.7",
+          "buffer": "0.30",
+          "sl": "4007.00",
+          "tp1": "3999",
+          "tp2": "3994",
+          "poi_low": null,
+          "poi_high": null
+        },
+        "rr1": null,
+        "rr2": null,
+        "stop_points": null,
+        "order": "NONE",
+        "state": "PREPARED_PLAN",
+        "preferences": [],
+        "incomplete_fields": [
+          "model",
+          "entry",
+          "trigger",
+          "poi",
+          "expiry",
+          "order",
+          "stop_geometry",
+          "target_geometry",
+          "rr",
+          "barriers"
+        ],
+        "broker_checks": [
+          {
+            "name": "broker_quote",
+            "status": "UNKNOWN",
+            "reason": "BROKER_QUOTES_UNVERIFIED",
+            "evidence_ids": []
+          }
+        ],
+        "live_ready": false,
+        "validation_digest": null
+      }
+    ],
+    "reasons": [
+      "MODEL_UNVERIFIED:MISSING_REFERENCE",
+      "ENTRY_UNVERIFIED",
+      "TRIGGER_UNVERIFIED",
+      "POI_UNVERIFIED:POI_STATE_CHRONOLOGY_UNVERIFIED",
+      "EXPIRY_UNVERIFIED:EXPIRY_PRECEDES_FORMATION",
+      "ORDER_ENTRY_DEPENDENCY_UNKNOWN",
+      "STRUCTURAL_SL_UNVERIFIED",
+      "TARGET_PRICE_UNVERIFIED",
+      "RR_DEPENDENCY_UNKNOWN",
+      "BARRIER_UNVERIFIED:BARRIER_PRICE_DEPENDENCY"
+    ],
+    "coverage": [
+      {
+        "side": "BUY",
+        "route": "REVERSAL",
+        "evidence_ref": "coverage:BUY:REVERSAL",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "status": "COMPLETE"
+      },
+      {
+        "side": "BUY",
+        "route": "CONTINUATION",
+        "evidence_ref": "coverage:BUY:CONTINUATION",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "status": "COMPLETE"
+      },
+      {
+        "side": "SELL",
+        "route": "REVERSAL",
+        "evidence_ref": "coverage:SELL:REVERSAL",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "status": "COMPLETE"
+      },
+      {
+        "side": "SELL",
+        "route": "CONTINUATION",
+        "evidence_ref": "coverage:SELL:CONTINUATION",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "status": "COMPLETE"
+      }
+    ],
+    "coverage_complete": true,
+    "historical_ids": [],
+    "perception": "ANNOTATION_VALIDATED_NOT_PIXEL_VERIFIED",
+    "live_ready": false
+  },
+  "snapshot": {
+    "symbol": "XAUUSD",
+    "feed": "P3_SYNTHETIC_NOT_MARKET",
+    "cursor": "2026-01-05T10:25:00Z",
+    "mode": 1,
+    "timeframes": [
+      "M1",
+      "M15",
+      "M5"
+    ],
+    "source_hashes": [
+      "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+      "9bec9b93cb363095e1e6c352a6c7ecfc629715e5bf5feb8a5236ea8f595d0db9",
+      "d272c83146edb6f5c3fe5af7bd4536265aa6671d46c081d2efd567b5e8d1bd63"
+    ],
+    "quote_ref": "quote",
+    "context": "REPLAY",
+    "price_unit": "XAUUSD_NATIVE",
+    "execution_mode": 5
+  },
+  "scan": {
+    "status": "CANDIDATES_FOUND",
+    "probes": [
+      {
+        "side": "BUY",
+        "route": "REVERSAL",
+        "model_id": "MC04",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "POI_ONLY",
+        "reason": "2 verified three-bar FVGs; not standalone entries",
+        "evidence_ids": [
+          "b6",
+          "b7"
+        ]
+      },
+      {
+        "side": "BUY",
+        "route": "REVERSAL",
+        "model_id": "MC07",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+        "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+        "evidence_ids": [
+          "b0",
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6",
+          "b7",
+          "b8",
+          "b9",
+          "b10",
+          "b11",
+          "b12",
+          "b13",
+          "b14",
+          "b15",
+          "b16"
+        ]
+      },
+      {
+        "side": "BUY",
+        "route": "REVERSAL",
+        "model_id": "MC08",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+        "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+        "evidence_ids": [
+          "b0",
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6",
+          "b7",
+          "b8",
+          "b9",
+          "b10",
+          "b11",
+          "b12",
+          "b13",
+          "b14",
+          "b15",
+          "b16"
+        ]
+      },
+      {
+        "side": "BUY",
+        "route": "CONTINUATION",
+        "model_id": "MC03",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "NO_ELIGIBLE_MODEL_IN_SCOPE",
+        "reason": "MC03_DISABLED; no continuation ENTRY_MODEL enabled",
+        "evidence_ids": []
+      },
+      {
+        "side": "SELL",
+        "route": "REVERSAL",
+        "model_id": "MC04",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "POI_ONLY",
+        "reason": "1 verified three-bar FVGs; not standalone entries",
+        "evidence_ids": [
+          "b14"
+        ]
+      },
+      {
+        "side": "SELL",
+        "route": "REVERSAL",
+        "model_id": "MC07",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "CANDIDATES_FOUND",
+        "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+        "evidence_ids": [
+          "b0",
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6",
+          "b7",
+          "b8",
+          "b9",
+          "b10",
+          "b11",
+          "b12",
+          "b13",
+          "b14",
+          "b15",
+          "b16"
+        ]
+      },
+      {
+        "side": "SELL",
+        "route": "REVERSAL",
+        "model_id": "MC08",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "CANDIDATES_FOUND",
+        "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+        "evidence_ids": [
+          "b0",
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6",
+          "b7",
+          "b8",
+          "b9",
+          "b10",
+          "b11",
+          "b12",
+          "b13",
+          "b14",
+          "b15",
+          "b16"
+        ]
+      },
+      {
+        "side": "SELL",
+        "route": "CONTINUATION",
+        "model_id": "MC03",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "NO_ELIGIBLE_MODEL_IN_SCOPE",
+        "reason": "MC03_DISABLED; no continuation ENTRY_MODEL enabled",
+        "evidence_ids": []
+      },
+      {
+        "side": "BUY",
+        "route": "REVERSAL",
+        "model_id": "MC05",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+        "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+        "evidence_ids": [
+          "b0",
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6",
+          "b7",
+          "b8",
+          "b9",
+          "b10",
+          "b11",
+          "b12",
+          "b13",
+          "b14",
+          "b15",
+          "b16"
+        ]
+      },
+      {
+        "side": "BUY",
+        "route": "CONTINUATION",
+        "model_id": "MC05",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+        "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+        "evidence_ids": [
+          "b0",
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6",
+          "b7",
+          "b8",
+          "b9",
+          "b10",
+          "b11",
+          "b12",
+          "b13",
+          "b14",
+          "b15",
+          "b16"
+        ]
+      },
+      {
+        "side": "SELL",
+        "route": "REVERSAL",
+        "model_id": "MC05",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "CANDIDATES_FOUND",
+        "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+        "evidence_ids": [
+          "b0",
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6",
+          "b7",
+          "b8",
+          "b9",
+          "b10",
+          "b11",
+          "b12",
+          "b13",
+          "b14",
+          "b15",
+          "b16"
+        ]
+      },
+      {
+        "side": "SELL",
+        "route": "CONTINUATION",
+        "model_id": "MC05",
+        "start": "2026-01-05T09:00:00Z",
+        "end": "2026-01-05T10:25:00Z",
+        "bars_examined": 17,
+        "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+        "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+        "evidence_ids": [
+          "b0",
+          "b1",
+          "b2",
+          "b3",
+          "b4",
+          "b5",
+          "b6",
+          "b7",
+          "b8",
+          "b9",
+          "b10",
+          "b11",
+          "b12",
+          "b13",
+          "b14",
+          "b15",
+          "b16"
+        ]
+      }
+    ],
+    "seed_ids": [
+      "SELL_MC07_raid11_break13_gap14",
+      "SELL_MC08_raid11_break13_gap14",
+      "SELL_MC05_gap6_inv14",
+      "SELL_MC05_gap7_inv13"
+    ],
+    "complete_in_scope": true,
+    "source_hashes": [
+      "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+      "d272c83146edb6f5c3fe5af7bd4536265aa6671d46c081d2efd567b5e8d1bd63",
+      "9bec9b93cb363095e1e6c352a6c7ecfc629715e5bf5feb8a5236ea8f595d0db9"
+    ],
+    "model_scope": [
+      "MC04",
+      "MC05",
+      "MC07",
+      "MC08"
+    ],
+    "unavailable_models": [
+      "MC01",
+      "MC02",
+      "MC03",
+      "MC06",
+      "MC09",
+      "MC10",
+      "MC11",
+      "MC12"
+    ],
+    "span_start": "2026-01-05T09:00:00Z",
+    "span_end": "2026-01-05T10:25:00Z",
+    "events": [
+      "BUY:LIQUIDITY_RAID:b13:prior=b8",
+      "BUY:NO_HISTORICAL_BREAK:b13",
+      "SELL:LIQUIDITY_RAID:b5:prior=b3",
+      "SELL:RAID_NO_LATEST_INNER:b5",
+      "SELL:LIQUIDITY_RAID:b11:prior=b6",
+      "SELL:STRUCTURAL_BREAK:b13:inner=b8",
+      "SELL:MC05_CLOSED_INVERSION:b14:originalFVG=b4..b6",
+      "SELL:MC05_CLOSED_INVERSION:b13:originalFVG=b5..b7"
+    ],
+    "diagnostics": [
+      "P4_SCOPED_VISIBLE_NATIVE_DISCOVERY",
+      "REAL_MARKET_VALIDATION_BLOCKED"
+    ]
+  },
+  "context": [],
+  "sides": {
+    "BUY": {
+      "mode": 5,
+      "readiness": "NO_VALID_SETUP",
+      "reasons": [
+        "NO_CANDIDATE_IN_ENABLED_SIDE_SCOPE"
+      ],
+      "decision": {
+        "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+        "evaluation_id": "a5bba2d9214f909aa9b53bbf258d84d4b257235daa1ab53b14fb927fcb5f31da",
+        "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+        "state": "NO_VALID_SETUP",
+        "selected_id": null,
+        "candidates": [
+          {
+            "seed": {
+              "id": "SELL_MC05_gap6_inv14",
+              "model_id": "MC05",
+              "side": "SELL",
+              "route": "REVERSAL",
+              "refs": {
+                "c1": "b4",
+                "c2": "b5",
+                "c3": "b6",
+                "inversion": "b14",
+                "protected_left": "b10",
+                "protected_bar": "b11",
+                "protected_right": "b12",
+                "swing": "SELL_MC05_gap6_inv14:swing",
+                "buffer": "SELL_MC05_gap6_inv14:buffer",
+                "expiry": "SELL_MC05_gap6_inv14:p4expiry",
+                "tp1": "SELL_MC05_gap6_inv14:p4tp1",
+                "tp2": "SELL_MC05_gap6_inv14:p4tp2",
+                "poi_state": "SELL_MC05_gap6_inv14:m1poi",
+                "barrier_audit": "SELL_MC05_gap6_inv14:p4barrieraudit"
+              },
+              "entry_rule": "NEAR_EDGE",
+              "order_requested": "AUTO",
+              "barrier_refs": [],
+              "leg_bar_refs": [
+                "b11",
+                "b12",
+                "b13",
+                "b14"
+              ],
+              "precision_refs": {
+                "c1": "m1b3",
+                "c2": "m1b4",
+                "c3": "m1b5",
+                "break": "m1b4",
+                "level": "SELL_MC05_gap6_inv14:m1level"
+              }
+            },
+            "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+            "card_hash": "bf3c421038b08f7a9403ff78035ad1ae4c5ee288a21708a5df72fa8d11827202",
+            "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+            "gates": [
+              {
+                "name": "profile",
+                "status": "PASS",
+                "reason": "XAUUSD_MVP",
+                "evidence_ids": []
+              },
+              {
+                "name": "input",
+                "status": "PASS",
+                "reason": "SNAPSHOT_IDENTITY",
+                "evidence_ids": []
+              },
+              {
+                "name": "model",
+                "status": "PASS",
+                "reason": "SCOPED_MODEL_PROOF",
+                "evidence_ids": [
+                  "b4",
+                  "b5",
+                  "b6",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "name": "route",
+                "status": "PASS",
+                "reason": "ROUTE_DECLARED",
+                "evidence_ids": []
+              },
+              {
+                "name": "entry",
+                "status": "PASS",
+                "reason": "ANCHORED_NEAR_EDGE",
+                "evidence_ids": []
+              },
+              {
+                "name": "trigger",
+                "status": "PASS",
+                "reason": "CLOSED_BREAK_CONFIRMED",
+                "evidence_ids": []
+              },
+              {
+                "name": "swing",
+                "status": "PASS",
+                "reason": "ANCHORED_SWING",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:swing"
+                ]
+              },
+              {
+                "name": "buffer",
+                "status": "PASS",
+                "reason": "ANCHORED_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:buffer"
+                ]
+              },
+              {
+                "name": "tp1",
+                "status": "PASS",
+                "reason": "ANCHORED_TP1",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:p4tp1"
+                ]
+              },
+              {
+                "name": "tp2",
+                "status": "PASS",
+                "reason": "ANCHORED_TP2",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:p4tp2"
+                ]
+              },
+              {
+                "name": "swing_binding",
+                "status": "PASS",
+                "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+                "evidence_ids": []
+              },
+              {
+                "name": "sl",
+                "status": "PASS",
+                "reason": "DERIVED_SWING_PLUS_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:swing",
+                  "SELL_MC05_gap6_inv14:buffer"
+                ]
+              },
+              {
+                "name": "poi",
+                "status": "PASS",
+                "reason": "FRESH_ANNOTATED",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:m1poi"
+                ]
+              },
+              {
+                "name": "expiry",
+                "status": "PASS",
+                "reason": "EVENT_EXPIRY_NOT_UNATTENDED_READY",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:p4expiry"
+                ]
+              },
+              {
+                "name": "order",
+                "status": "PASS",
+                "reason": "SNAPSHOT_ORDER_PASS",
+                "evidence_ids": [
+                  "quote"
+                ]
+              },
+              {
+                "name": "stop_geometry",
+                "status": "PASS",
+                "reason": "STRUCTURAL_RISK_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "target_geometry",
+                "status": "PASS",
+                "reason": "TARGET_GEOMETRY_CHECK",
+                "evidence_ids": []
+              },
+              {
+                "name": "rr",
+                "status": "PASS",
+                "reason": "RR_PROVISIONAL_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "barriers",
+                "status": "PASS",
+                "reason": "FIRST_BARRIER_CHECKED",
+                "evidence_ids": []
+              }
+            ],
+            "prices": {
+              "entry": "4004.6",
+              "swing": "4006.7",
+              "buffer": "0.30",
+              "sl": "4007.00",
+              "tp1": "3999",
+              "tp2": "3994",
+              "poi_low": "4004.6",
+              "poi_high": "4004.8"
+            },
+            "rr1": "2.333333333333333333333333333",
+            "rr2": "4.416666666666666666666666667",
+            "stop_points": "240",
+            "order": "SELL_LIMIT",
+            "state": "TRADE_CANDIDATE",
+            "preferences": [
+              "TIGHT_STOP_SPREAD_CHECK",
+              "TP1_PREFERENCE_MISMATCH",
+              "TP2_PREFERENCE_MISMATCH"
+            ],
+            "incomplete_fields": [],
+            "broker_checks": [
+              {
+                "name": "broker_quote",
+                "status": "UNKNOWN",
+                "reason": "BROKER_QUOTES_UNVERIFIED",
+                "evidence_ids": []
+              }
+            ],
+            "live_ready": false,
+            "validation_digest": "abc4c3bfa5d5d99a14d57bf8c084114ff42148ae23307f770b8ad44a2325467e"
+          },
+          {
+            "seed": {
+              "id": "SELL_MC05_gap7_inv13",
+              "model_id": "MC05",
+              "side": "SELL",
+              "route": "REVERSAL",
+              "refs": {
+                "c1": "b5",
+                "c2": "b6",
+                "c3": "b7",
+                "inversion": "b13",
+                "protected_left": "b10",
+                "protected_bar": "b11",
+                "protected_right": "b12",
+                "swing": "SELL_MC05_gap7_inv13:swing",
+                "buffer": "SELL_MC05_gap7_inv13:buffer",
+                "expiry": "SELL_MC05_gap7_inv13:p4expiry",
+                "tp1": "SELL_MC05_gap7_inv13:p4tp1",
+                "tp2": "SELL_MC05_gap7_inv13:p4tp2",
+                "poi_state": "SELL_MC05_gap7_inv13:m1poi",
+                "barrier_audit": "SELL_MC05_gap7_inv13:p4barrieraudit"
+              },
+              "entry_rule": "NEAR_EDGE",
+              "order_requested": "AUTO",
+              "barrier_refs": [],
+              "leg_bar_refs": [
+                "b11",
+                "b12",
+                "b13"
+              ],
+              "precision_refs": {
+                "c1": "m1b3",
+                "c2": "m1b4",
+                "c3": "m1b5",
+                "break": "m1b4",
+                "level": "SELL_MC05_gap7_inv13:m1level"
+              }
+            },
+            "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+            "card_hash": "bf3c421038b08f7a9403ff78035ad1ae4c5ee288a21708a5df72fa8d11827202",
+            "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+            "gates": [
+              {
+                "name": "profile",
+                "status": "PASS",
+                "reason": "XAUUSD_MVP",
+                "evidence_ids": []
+              },
+              {
+                "name": "input",
+                "status": "PASS",
+                "reason": "SNAPSHOT_IDENTITY",
+                "evidence_ids": []
+              },
+              {
+                "name": "model",
+                "status": "PASS",
+                "reason": "SCOPED_MODEL_PROOF",
+                "evidence_ids": [
+                  "b5",
+                  "b6",
+                  "b7",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "name": "route",
+                "status": "PASS",
+                "reason": "ROUTE_DECLARED",
+                "evidence_ids": []
+              },
+              {
+                "name": "entry",
+                "status": "PASS",
+                "reason": "ANCHORED_NEAR_EDGE",
+                "evidence_ids": []
+              },
+              {
+                "name": "trigger",
+                "status": "PASS",
+                "reason": "CLOSED_BREAK_CONFIRMED",
+                "evidence_ids": []
+              },
+              {
+                "name": "swing",
+                "status": "PASS",
+                "reason": "ANCHORED_SWING",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:swing"
+                ]
+              },
+              {
+                "name": "buffer",
+                "status": "PASS",
+                "reason": "ANCHORED_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:buffer"
+                ]
+              },
+              {
+                "name": "tp1",
+                "status": "PASS",
+                "reason": "ANCHORED_TP1",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:p4tp1"
+                ]
+              },
+              {
+                "name": "tp2",
+                "status": "PASS",
+                "reason": "ANCHORED_TP2",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:p4tp2"
+                ]
+              },
+              {
+                "name": "swing_binding",
+                "status": "PASS",
+                "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+                "evidence_ids": []
+              },
+              {
+                "name": "sl",
+                "status": "PASS",
+                "reason": "DERIVED_SWING_PLUS_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:swing",
+                  "SELL_MC05_gap7_inv13:buffer"
+                ]
+              },
+              {
+                "name": "poi",
+                "status": "PASS",
+                "reason": "FRESH_ANNOTATED",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:m1poi"
+                ]
+              },
+              {
+                "name": "expiry",
+                "status": "PASS",
+                "reason": "EVENT_EXPIRY_NOT_UNATTENDED_READY",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:p4expiry"
+                ]
+              },
+              {
+                "name": "order",
+                "status": "PASS",
+                "reason": "SNAPSHOT_ORDER_PASS",
+                "evidence_ids": [
+                  "quote"
+                ]
+              },
+              {
+                "name": "stop_geometry",
+                "status": "PASS",
+                "reason": "STRUCTURAL_RISK_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "target_geometry",
+                "status": "PASS",
+                "reason": "TARGET_GEOMETRY_CHECK",
+                "evidence_ids": []
+              },
+              {
+                "name": "rr",
+                "status": "PASS",
+                "reason": "RR_PROVISIONAL_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "barriers",
+                "status": "PASS",
+                "reason": "FIRST_BARRIER_CHECKED",
+                "evidence_ids": []
+              }
+            ],
+            "prices": {
+              "entry": "4004.6",
+              "swing": "4006.7",
+              "buffer": "0.30",
+              "sl": "4007.00",
+              "tp1": "3999",
+              "tp2": "3994",
+              "poi_low": "4004.6",
+              "poi_high": "4004.8"
+            },
+            "rr1": "2.333333333333333333333333333",
+            "rr2": "4.416666666666666666666666667",
+            "stop_points": "240",
+            "order": "SELL_LIMIT",
+            "state": "TRADE_CANDIDATE",
+            "preferences": [
+              "TIGHT_STOP_SPREAD_CHECK",
+              "TP1_PREFERENCE_MISMATCH",
+              "TP2_PREFERENCE_MISMATCH"
+            ],
+            "incomplete_fields": [],
+            "broker_checks": [
+              {
+                "name": "broker_quote",
+                "status": "UNKNOWN",
+                "reason": "BROKER_QUOTES_UNVERIFIED",
+                "evidence_ids": []
+              }
+            ],
+            "live_ready": false,
+            "validation_digest": "5969938e1d586c285fa0d07b5543beda38e98e91ec291771fb666dd489fc2847"
+          },
+          {
+            "seed": {
+              "id": "SELL_MC07_raid11_break13_gap14",
+              "model_id": "MC07",
+              "side": "SELL",
+              "route": "REVERSAL",
+              "refs": {
+                "origin": "b8",
+                "raid": "b11",
+                "break": "b13",
+                "c1": "b12",
+                "c2": "b13",
+                "c3": "b14",
+                "prior": "SELL_MC07_raid11_break13_gap14:prior",
+                "inner": "SELL_MC07_raid11_break13_gap14:inner",
+                "swing": "SELL_MC07_raid11_break13_gap14:swing",
+                "buffer": "SELL_MC07_raid11_break13_gap14:buffer",
+                "poi_state": "SELL_MC07_raid11_break13_gap14:m1poi",
+                "latest_swing": "SELL_MC07_raid11_break13_gap14:audit",
+                "barrier_audit": "SELL_MC07_raid11_break13_gap14:p4barrieraudit",
+                "expiry": "SELL_MC07_raid11_break13_gap14:p4expiry",
+                "tp1": "SELL_MC07_raid11_break13_gap14:p4tp1",
+                "tp2": "SELL_MC07_raid11_break13_gap14:p4tp2"
+              },
+              "entry_rule": "NEAR_EDGE",
+              "order_requested": "AUTO",
+              "barrier_refs": [],
+              "leg_bar_refs": [
+                "b11",
+                "b12",
+                "b13"
+              ],
+              "precision_refs": {
+                "c1": "m1b3",
+                "c2": "m1b4",
+                "c3": "m1b5",
+                "break": "m1b4",
+                "level": "SELL_MC07_raid11_break13_gap14:m1level"
+              }
+            },
+            "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+            "card_hash": "0634643553510c43ba9331d488f3ed6da0e5f0e8431aa6697f89b797d9b576d4",
+            "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+            "gates": [
+              {
+                "name": "profile",
+                "status": "PASS",
+                "reason": "XAUUSD_MVP",
+                "evidence_ids": []
+              },
+              {
+                "name": "input",
+                "status": "PASS",
+                "reason": "SNAPSHOT_IDENTITY",
+                "evidence_ids": []
+              },
+              {
+                "name": "model",
+                "status": "PASS",
+                "reason": "SCOPED_MODEL_PROOF",
+                "evidence_ids": [
+                  "b12",
+                  "b13",
+                  "b14",
+                  "SELL_MC07_raid11_break13_gap14:prior",
+                  "SELL_MC07_raid11_break13_gap14:inner",
+                  "b8",
+                  "b11",
+                  "b13"
+                ]
+              },
+              {
+                "name": "route",
+                "status": "PASS",
+                "reason": "ROUTE_DECLARED",
+                "evidence_ids": []
+              },
+              {
+                "name": "entry",
+                "status": "PASS",
+                "reason": "ANCHORED_NEAR_EDGE",
+                "evidence_ids": []
+              },
+              {
+                "name": "trigger",
+                "status": "PASS",
+                "reason": "CLOSED_BREAK_CONFIRMED",
+                "evidence_ids": []
+              },
+              {
+                "name": "swing",
+                "status": "PASS",
+                "reason": "ANCHORED_SWING",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:swing"
+                ]
+              },
+              {
+                "name": "buffer",
+                "status": "PASS",
+                "reason": "ANCHORED_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:buffer"
+                ]
+              },
+              {
+                "name": "tp1",
+                "status": "PASS",
+                "reason": "ANCHORED_TP1",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:p4tp1"
+                ]
+              },
+              {
+                "name": "tp2",
+                "status": "PASS",
+                "reason": "ANCHORED_TP2",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:p4tp2"
+                ]
+              },
+              {
+                "name": "swing_binding",
+                "status": "PASS",
+                "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+                "evidence_ids": []
+              },
+              {
+                "name": "sl",
+                "status": "PASS",
+                "reason": "DERIVED_SWING_PLUS_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:swing",
+                  "SELL_MC07_raid11_break13_gap14:buffer"
+                ]
+              },
+              {
+                "name": "poi",
+                "status": "PASS",
+                "reason": "FRESH_ANNOTATED",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:m1poi"
+                ]
+              },
+              {
+                "name": "expiry",
+                "status": "PASS",
+                "reason": "EVENT_EXPIRY_NOT_UNATTENDED_READY",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:p4expiry"
+                ]
+              },
+              {
+                "name": "order",
+                "status": "PASS",
+                "reason": "SNAPSHOT_ORDER_PASS",
+                "evidence_ids": [
+                  "quote"
+                ]
+              },
+              {
+                "name": "stop_geometry",
+                "status": "PASS",
+                "reason": "STRUCTURAL_RISK_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "target_geometry",
+                "status": "PASS",
+                "reason": "TARGET_GEOMETRY_CHECK",
+                "evidence_ids": []
+              },
+              {
+                "name": "rr",
+                "status": "PASS",
+                "reason": "RR_PROVISIONAL_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "barriers",
+                "status": "PASS",
+                "reason": "FIRST_BARRIER_CHECKED",
+                "evidence_ids": []
+              }
+            ],
+            "prices": {
+              "entry": "4004.6",
+              "swing": "4006.7",
+              "buffer": "0.30",
+              "sl": "4007.00",
+              "tp1": "3999",
+              "tp2": "3994",
+              "poi_low": "4004.6",
+              "poi_high": "4004.8"
+            },
+            "rr1": "2.333333333333333333333333333",
+            "rr2": "4.416666666666666666666666667",
+            "stop_points": "240",
+            "order": "SELL_LIMIT",
+            "state": "TRADE_CANDIDATE",
+            "preferences": [
+              "TIGHT_STOP_SPREAD_CHECK",
+              "TP1_PREFERENCE_MISMATCH",
+              "TP2_PREFERENCE_MISMATCH"
+            ],
+            "incomplete_fields": [],
+            "broker_checks": [
+              {
+                "name": "broker_quote",
+                "status": "UNKNOWN",
+                "reason": "BROKER_QUOTES_UNVERIFIED",
+                "evidence_ids": []
+              }
+            ],
+            "live_ready": false,
+            "validation_digest": "fe5ffee822cbdf1b43fe1bedfda5409e8a32e92748c00b152191faa5d7e1bbd0"
+          },
+          {
+            "seed": {
+              "id": "SELL_MC08_raid11_break13_gap14",
+              "model_id": "MC08",
+              "side": "SELL",
+              "route": "REVERSAL",
+              "refs": {
+                "origin": "b8",
+                "raid": "b11",
+                "break": "b13",
+                "c1": "b12",
+                "c2": "b13",
+                "c3": "b14",
+                "prior": "SELL_MC08_raid11_break13_gap14:prior",
+                "inner": "SELL_MC08_raid11_break13_gap14:inner",
+                "swing": "SELL_MC08_raid11_break13_gap14:swing",
+                "buffer": "SELL_MC08_raid11_break13_gap14:buffer",
+                "poi_state": "SELL_MC08_raid11_break13_gap14:p4poi",
+                "latest_swing": "SELL_MC08_raid11_break13_gap14:audit",
+                "barrier_audit": "SELL_MC08_raid11_break13_gap14:p4barrieraudit",
+                "expiry": "SELL_MC08_raid11_break13_gap14:p4expiry",
+                "tp1": "SELL_MC08_raid11_break13_gap14:p4tp1",
+                "tp2": "SELL_MC08_raid11_break13_gap14:p4tp2"
+              },
+              "entry_rule": "NEAR_EDGE",
+              "order_requested": "AUTO",
+              "barrier_refs": [],
+              "leg_bar_refs": [
+                "b11",
+                "b12",
+                "b13"
+              ],
+              "precision_refs": {}
+            },
+            "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+            "card_hash": "e64440d571b599d16402190904d9cbaa871fa97bd6875eb3599b6922dccd5bc1",
+            "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+            "gates": [
+              {
+                "name": "profile",
+                "status": "PASS",
+                "reason": "XAUUSD_MVP",
+                "evidence_ids": []
+              },
+              {
+                "name": "input",
+                "status": "PASS",
+                "reason": "SNAPSHOT_IDENTITY",
+                "evidence_ids": []
+              },
+              {
+                "name": "model",
+                "status": "UNKNOWN",
+                "reason": "MODEL_UNVERIFIED:MISSING_REFERENCE",
+                "evidence_ids": [
+                  "b12",
+                  "b13",
+                  "b14",
+                  "SELL_MC08_raid11_break13_gap14:prior",
+                  "SELL_MC08_raid11_break13_gap14:inner",
+                  "b8",
+                  "b11",
+                  "b13"
+                ]
+              },
+              {
+                "name": "route",
+                "status": "PASS",
+                "reason": "ROUTE_DECLARED",
+                "evidence_ids": []
+              },
+              {
+                "name": "entry",
+                "status": "UNKNOWN",
+                "reason": "ENTRY_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "trigger",
+                "status": "UNKNOWN",
+                "reason": "TRIGGER_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "swing",
+                "status": "PASS",
+                "reason": "ANCHORED_SWING",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:swing"
+                ]
+              },
+              {
+                "name": "buffer",
+                "status": "PASS",
+                "reason": "ANCHORED_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:buffer"
+                ]
+              },
+              {
+                "name": "tp1",
+                "status": "PASS",
+                "reason": "ANCHORED_TP1",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:p4tp1"
+                ]
+              },
+              {
+                "name": "tp2",
+                "status": "PASS",
+                "reason": "ANCHORED_TP2",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:p4tp2"
+                ]
+              },
+              {
+                "name": "swing_binding",
+                "status": "PASS",
+                "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+                "evidence_ids": []
+              },
+              {
+                "name": "sl",
+                "status": "PASS",
+                "reason": "DERIVED_SWING_PLUS_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:swing",
+                  "SELL_MC08_raid11_break13_gap14:buffer"
+                ]
+              },
+              {
+                "name": "poi",
+                "status": "UNKNOWN",
+                "reason": "POI_UNVERIFIED:POI_STATE_CHRONOLOGY_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "expiry",
+                "status": "UNKNOWN",
+                "reason": "EXPIRY_UNVERIFIED:EXPIRY_PRECEDES_FORMATION",
+                "evidence_ids": []
+              },
+              {
+                "name": "order",
+                "status": "UNKNOWN",
+                "reason": "ORDER_ENTRY_DEPENDENCY_UNKNOWN",
+                "evidence_ids": []
+              },
+              {
+                "name": "stop_geometry",
+                "status": "UNKNOWN",
+                "reason": "STRUCTURAL_SL_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "target_geometry",
+                "status": "UNKNOWN",
+                "reason": "TARGET_PRICE_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "rr",
+                "status": "UNKNOWN",
+                "reason": "RR_DEPENDENCY_UNKNOWN",
+                "evidence_ids": []
+              },
+              {
+                "name": "barriers",
+                "status": "UNKNOWN",
+                "reason": "BARRIER_UNVERIFIED:BARRIER_PRICE_DEPENDENCY",
+                "evidence_ids": []
+              }
+            ],
+            "prices": {
+              "entry": null,
+              "swing": "4006.7",
+              "buffer": "0.30",
+              "sl": "4007.00",
+              "tp1": "3999",
+              "tp2": "3994",
+              "poi_low": null,
+              "poi_high": null
+            },
+            "rr1": null,
+            "rr2": null,
+            "stop_points": null,
+            "order": "NONE",
+            "state": "PREPARED_PLAN",
+            "preferences": [],
+            "incomplete_fields": [
+              "model",
+              "entry",
+              "trigger",
+              "poi",
+              "expiry",
+              "order",
+              "stop_geometry",
+              "target_geometry",
+              "rr",
+              "barriers"
+            ],
+            "broker_checks": [
+              {
+                "name": "broker_quote",
+                "status": "UNKNOWN",
+                "reason": "BROKER_QUOTES_UNVERIFIED",
+                "evidence_ids": []
+              }
+            ],
+            "live_ready": false,
+            "validation_digest": null
+          }
+        ],
+        "reasons": [
+          "NO_CANDIDATE_IN_ENABLED_SIDE_SCOPE"
+        ],
+        "coverage": [
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "evidence_ref": "coverage:BUY:REVERSAL",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "status": "COMPLETE"
+          },
+          {
+            "side": "BUY",
+            "route": "CONTINUATION",
+            "evidence_ref": "coverage:BUY:CONTINUATION",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "status": "COMPLETE"
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "evidence_ref": "coverage:SELL:REVERSAL",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "status": "COMPLETE"
+          },
+          {
+            "side": "SELL",
+            "route": "CONTINUATION",
+            "evidence_ref": "coverage:SELL:CONTINUATION",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "status": "COMPLETE"
+          }
+        ],
+        "coverage_complete": true,
+        "historical_ids": [],
+        "perception": "ANNOTATION_VALIDATED_NOT_PIXEL_VERIFIED",
+        "live_ready": false
+      },
+      "snapshot": {
+        "symbol": "XAUUSD",
+        "feed": "P3_SYNTHETIC_NOT_MARKET",
+        "cursor": "2026-01-05T10:25:00Z",
+        "mode": 1,
+        "timeframes": [
+          "M1",
+          "M15",
+          "M5"
+        ],
+        "source_hashes": [
+          "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+          "9bec9b93cb363095e1e6c352a6c7ecfc629715e5bf5feb8a5236ea8f595d0db9",
+          "d272c83146edb6f5c3fe5af7bd4536265aa6671d46c081d2efd567b5e8d1bd63"
+        ],
+        "quote_ref": "quote",
+        "context": "REPLAY",
+        "price_unit": "XAUUSD_NATIVE",
+        "execution_mode": 5
+      },
+      "scan": {
+        "status": "CANDIDATES_FOUND",
+        "probes": [
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "model_id": "MC04",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "POI_ONLY",
+            "reason": "2 verified three-bar FVGs; not standalone entries",
+            "evidence_ids": [
+              "b6",
+              "b7"
+            ]
+          },
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "model_id": "MC07",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "model_id": "MC08",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "BUY",
+            "route": "CONTINUATION",
+            "model_id": "MC03",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_ELIGIBLE_MODEL_IN_SCOPE",
+            "reason": "MC03_DISABLED; no continuation ENTRY_MODEL enabled",
+            "evidence_ids": []
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "model_id": "MC04",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "POI_ONLY",
+            "reason": "1 verified three-bar FVGs; not standalone entries",
+            "evidence_ids": [
+              "b14"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "model_id": "MC07",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "CANDIDATES_FOUND",
+            "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "model_id": "MC08",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "CANDIDATES_FOUND",
+            "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "CONTINUATION",
+            "model_id": "MC03",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_ELIGIBLE_MODEL_IN_SCOPE",
+            "reason": "MC03_DISABLED; no continuation ENTRY_MODEL enabled",
+            "evidence_ids": []
+          },
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "model_id": "MC05",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "BUY",
+            "route": "CONTINUATION",
+            "model_id": "MC05",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "model_id": "MC05",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "CANDIDATES_FOUND",
+            "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "CONTINUATION",
+            "model_id": "MC05",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          }
+        ],
+        "seed_ids": [
+          "SELL_MC07_raid11_break13_gap14",
+          "SELL_MC08_raid11_break13_gap14",
+          "SELL_MC05_gap6_inv14",
+          "SELL_MC05_gap7_inv13"
+        ],
+        "complete_in_scope": true,
+        "source_hashes": [
+          "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+          "d272c83146edb6f5c3fe5af7bd4536265aa6671d46c081d2efd567b5e8d1bd63",
+          "9bec9b93cb363095e1e6c352a6c7ecfc629715e5bf5feb8a5236ea8f595d0db9"
+        ],
+        "model_scope": [
+          "MC04",
+          "MC05",
+          "MC07",
+          "MC08"
+        ],
+        "unavailable_models": [
+          "MC01",
+          "MC02",
+          "MC03",
+          "MC06",
+          "MC09",
+          "MC10",
+          "MC11",
+          "MC12"
+        ],
+        "span_start": "2026-01-05T09:00:00Z",
+        "span_end": "2026-01-05T10:25:00Z",
+        "events": [
+          "BUY:LIQUIDITY_RAID:b13:prior=b8",
+          "BUY:NO_HISTORICAL_BREAK:b13",
+          "SELL:LIQUIDITY_RAID:b5:prior=b3",
+          "SELL:RAID_NO_LATEST_INNER:b5",
+          "SELL:LIQUIDITY_RAID:b11:prior=b6",
+          "SELL:STRUCTURAL_BREAK:b13:inner=b8",
+          "SELL:MC05_CLOSED_INVERSION:b14:originalFVG=b4..b6",
+          "SELL:MC05_CLOSED_INVERSION:b13:originalFVG=b5..b7"
+        ],
+        "diagnostics": [
+          "P4_SCOPED_VISIBLE_NATIVE_DISCOVERY",
+          "REAL_MARKET_VALIDATION_BLOCKED"
+        ]
+      },
+      "context": [],
+      "sides": {},
+      "source_hashes": [
+        "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+        "d272c83146edb6f5c3fe5af7bd4536265aa6671d46c081d2efd567b5e8d1bd63",
+        "9bec9b93cb363095e1e6c352a6c7ecfc629715e5bf5feb8a5236ea8f595d0db9"
+      ],
+      "release": "PARTIAL_DEVELOPER_PREVIEW",
+      "live_ready": false
+    },
+    "SELL": {
+      "mode": 5,
+      "readiness": "TRADE_CANDIDATE",
+      "reasons": [
+        "MODEL_UNVERIFIED:MISSING_REFERENCE",
+        "ENTRY_UNVERIFIED",
+        "TRIGGER_UNVERIFIED",
+        "POI_UNVERIFIED:POI_STATE_CHRONOLOGY_UNVERIFIED",
+        "EXPIRY_UNVERIFIED:EXPIRY_PRECEDES_FORMATION",
+        "ORDER_ENTRY_DEPENDENCY_UNKNOWN",
+        "STRUCTURAL_SL_UNVERIFIED",
+        "TARGET_PRICE_UNVERIFIED",
+        "RR_DEPENDENCY_UNKNOWN",
+        "BARRIER_UNVERIFIED:BARRIER_PRICE_DEPENDENCY"
+      ],
+      "decision": {
+        "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+        "evaluation_id": "2625ff0d4b1d41537ac5fe160ca95d9091c016889981169e62de1ef3e681f896",
+        "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+        "state": "TRADE_CANDIDATE",
+        "selected_id": "SELL_MC05_gap6_inv14",
+        "candidates": [
+          {
+            "seed": {
+              "id": "SELL_MC05_gap6_inv14",
+              "model_id": "MC05",
+              "side": "SELL",
+              "route": "REVERSAL",
+              "refs": {
+                "c1": "b4",
+                "c2": "b5",
+                "c3": "b6",
+                "inversion": "b14",
+                "protected_left": "b10",
+                "protected_bar": "b11",
+                "protected_right": "b12",
+                "swing": "SELL_MC05_gap6_inv14:swing",
+                "buffer": "SELL_MC05_gap6_inv14:buffer",
+                "expiry": "SELL_MC05_gap6_inv14:p4expiry",
+                "tp1": "SELL_MC05_gap6_inv14:p4tp1",
+                "tp2": "SELL_MC05_gap6_inv14:p4tp2",
+                "poi_state": "SELL_MC05_gap6_inv14:m1poi",
+                "barrier_audit": "SELL_MC05_gap6_inv14:p4barrieraudit"
+              },
+              "entry_rule": "NEAR_EDGE",
+              "order_requested": "AUTO",
+              "barrier_refs": [],
+              "leg_bar_refs": [
+                "b11",
+                "b12",
+                "b13",
+                "b14"
+              ],
+              "precision_refs": {
+                "c1": "m1b3",
+                "c2": "m1b4",
+                "c3": "m1b5",
+                "break": "m1b4",
+                "level": "SELL_MC05_gap6_inv14:m1level"
+              }
+            },
+            "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+            "card_hash": "bf3c421038b08f7a9403ff78035ad1ae4c5ee288a21708a5df72fa8d11827202",
+            "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+            "gates": [
+              {
+                "name": "profile",
+                "status": "PASS",
+                "reason": "XAUUSD_MVP",
+                "evidence_ids": []
+              },
+              {
+                "name": "input",
+                "status": "PASS",
+                "reason": "SNAPSHOT_IDENTITY",
+                "evidence_ids": []
+              },
+              {
+                "name": "model",
+                "status": "PASS",
+                "reason": "SCOPED_MODEL_PROOF",
+                "evidence_ids": [
+                  "b4",
+                  "b5",
+                  "b6",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "name": "route",
+                "status": "PASS",
+                "reason": "ROUTE_DECLARED",
+                "evidence_ids": []
+              },
+              {
+                "name": "entry",
+                "status": "PASS",
+                "reason": "ANCHORED_NEAR_EDGE",
+                "evidence_ids": []
+              },
+              {
+                "name": "trigger",
+                "status": "PASS",
+                "reason": "CLOSED_BREAK_CONFIRMED",
+                "evidence_ids": []
+              },
+              {
+                "name": "swing",
+                "status": "PASS",
+                "reason": "ANCHORED_SWING",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:swing"
+                ]
+              },
+              {
+                "name": "buffer",
+                "status": "PASS",
+                "reason": "ANCHORED_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:buffer"
+                ]
+              },
+              {
+                "name": "tp1",
+                "status": "PASS",
+                "reason": "ANCHORED_TP1",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:p4tp1"
+                ]
+              },
+              {
+                "name": "tp2",
+                "status": "PASS",
+                "reason": "ANCHORED_TP2",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:p4tp2"
+                ]
+              },
+              {
+                "name": "swing_binding",
+                "status": "PASS",
+                "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+                "evidence_ids": []
+              },
+              {
+                "name": "sl",
+                "status": "PASS",
+                "reason": "DERIVED_SWING_PLUS_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:swing",
+                  "SELL_MC05_gap6_inv14:buffer"
+                ]
+              },
+              {
+                "name": "poi",
+                "status": "PASS",
+                "reason": "FRESH_ANNOTATED",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:m1poi"
+                ]
+              },
+              {
+                "name": "expiry",
+                "status": "PASS",
+                "reason": "EVENT_EXPIRY_NOT_UNATTENDED_READY",
+                "evidence_ids": [
+                  "SELL_MC05_gap6_inv14:p4expiry"
+                ]
+              },
+              {
+                "name": "order",
+                "status": "PASS",
+                "reason": "SNAPSHOT_ORDER_PASS",
+                "evidence_ids": [
+                  "quote"
+                ]
+              },
+              {
+                "name": "stop_geometry",
+                "status": "PASS",
+                "reason": "STRUCTURAL_RISK_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "target_geometry",
+                "status": "PASS",
+                "reason": "TARGET_GEOMETRY_CHECK",
+                "evidence_ids": []
+              },
+              {
+                "name": "rr",
+                "status": "PASS",
+                "reason": "RR_PROVISIONAL_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "barriers",
+                "status": "PASS",
+                "reason": "FIRST_BARRIER_CHECKED",
+                "evidence_ids": []
+              }
+            ],
+            "prices": {
+              "entry": "4004.6",
+              "swing": "4006.7",
+              "buffer": "0.30",
+              "sl": "4007.00",
+              "tp1": "3999",
+              "tp2": "3994",
+              "poi_low": "4004.6",
+              "poi_high": "4004.8"
+            },
+            "rr1": "2.333333333333333333333333333",
+            "rr2": "4.416666666666666666666666667",
+            "stop_points": "240",
+            "order": "SELL_LIMIT",
+            "state": "TRADE_CANDIDATE",
+            "preferences": [
+              "TIGHT_STOP_SPREAD_CHECK",
+              "TP1_PREFERENCE_MISMATCH",
+              "TP2_PREFERENCE_MISMATCH"
+            ],
+            "incomplete_fields": [],
+            "broker_checks": [
+              {
+                "name": "broker_quote",
+                "status": "UNKNOWN",
+                "reason": "BROKER_QUOTES_UNVERIFIED",
+                "evidence_ids": []
+              }
+            ],
+            "live_ready": false,
+            "validation_digest": "abc4c3bfa5d5d99a14d57bf8c084114ff42148ae23307f770b8ad44a2325467e"
+          },
+          {
+            "seed": {
+              "id": "SELL_MC05_gap7_inv13",
+              "model_id": "MC05",
+              "side": "SELL",
+              "route": "REVERSAL",
+              "refs": {
+                "c1": "b5",
+                "c2": "b6",
+                "c3": "b7",
+                "inversion": "b13",
+                "protected_left": "b10",
+                "protected_bar": "b11",
+                "protected_right": "b12",
+                "swing": "SELL_MC05_gap7_inv13:swing",
+                "buffer": "SELL_MC05_gap7_inv13:buffer",
+                "expiry": "SELL_MC05_gap7_inv13:p4expiry",
+                "tp1": "SELL_MC05_gap7_inv13:p4tp1",
+                "tp2": "SELL_MC05_gap7_inv13:p4tp2",
+                "poi_state": "SELL_MC05_gap7_inv13:m1poi",
+                "barrier_audit": "SELL_MC05_gap7_inv13:p4barrieraudit"
+              },
+              "entry_rule": "NEAR_EDGE",
+              "order_requested": "AUTO",
+              "barrier_refs": [],
+              "leg_bar_refs": [
+                "b11",
+                "b12",
+                "b13"
+              ],
+              "precision_refs": {
+                "c1": "m1b3",
+                "c2": "m1b4",
+                "c3": "m1b5",
+                "break": "m1b4",
+                "level": "SELL_MC05_gap7_inv13:m1level"
+              }
+            },
+            "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+            "card_hash": "bf3c421038b08f7a9403ff78035ad1ae4c5ee288a21708a5df72fa8d11827202",
+            "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+            "gates": [
+              {
+                "name": "profile",
+                "status": "PASS",
+                "reason": "XAUUSD_MVP",
+                "evidence_ids": []
+              },
+              {
+                "name": "input",
+                "status": "PASS",
+                "reason": "SNAPSHOT_IDENTITY",
+                "evidence_ids": []
+              },
+              {
+                "name": "model",
+                "status": "PASS",
+                "reason": "SCOPED_MODEL_PROOF",
+                "evidence_ids": [
+                  "b5",
+                  "b6",
+                  "b7",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              },
+              {
+                "name": "route",
+                "status": "PASS",
+                "reason": "ROUTE_DECLARED",
+                "evidence_ids": []
+              },
+              {
+                "name": "entry",
+                "status": "PASS",
+                "reason": "ANCHORED_NEAR_EDGE",
+                "evidence_ids": []
+              },
+              {
+                "name": "trigger",
+                "status": "PASS",
+                "reason": "CLOSED_BREAK_CONFIRMED",
+                "evidence_ids": []
+              },
+              {
+                "name": "swing",
+                "status": "PASS",
+                "reason": "ANCHORED_SWING",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:swing"
+                ]
+              },
+              {
+                "name": "buffer",
+                "status": "PASS",
+                "reason": "ANCHORED_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:buffer"
+                ]
+              },
+              {
+                "name": "tp1",
+                "status": "PASS",
+                "reason": "ANCHORED_TP1",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:p4tp1"
+                ]
+              },
+              {
+                "name": "tp2",
+                "status": "PASS",
+                "reason": "ANCHORED_TP2",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:p4tp2"
+                ]
+              },
+              {
+                "name": "swing_binding",
+                "status": "PASS",
+                "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+                "evidence_ids": []
+              },
+              {
+                "name": "sl",
+                "status": "PASS",
+                "reason": "DERIVED_SWING_PLUS_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:swing",
+                  "SELL_MC05_gap7_inv13:buffer"
+                ]
+              },
+              {
+                "name": "poi",
+                "status": "PASS",
+                "reason": "FRESH_ANNOTATED",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:m1poi"
+                ]
+              },
+              {
+                "name": "expiry",
+                "status": "PASS",
+                "reason": "EVENT_EXPIRY_NOT_UNATTENDED_READY",
+                "evidence_ids": [
+                  "SELL_MC05_gap7_inv13:p4expiry"
+                ]
+              },
+              {
+                "name": "order",
+                "status": "PASS",
+                "reason": "SNAPSHOT_ORDER_PASS",
+                "evidence_ids": [
+                  "quote"
+                ]
+              },
+              {
+                "name": "stop_geometry",
+                "status": "PASS",
+                "reason": "STRUCTURAL_RISK_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "target_geometry",
+                "status": "PASS",
+                "reason": "TARGET_GEOMETRY_CHECK",
+                "evidence_ids": []
+              },
+              {
+                "name": "rr",
+                "status": "PASS",
+                "reason": "RR_PROVISIONAL_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "barriers",
+                "status": "PASS",
+                "reason": "FIRST_BARRIER_CHECKED",
+                "evidence_ids": []
+              }
+            ],
+            "prices": {
+              "entry": "4004.6",
+              "swing": "4006.7",
+              "buffer": "0.30",
+              "sl": "4007.00",
+              "tp1": "3999",
+              "tp2": "3994",
+              "poi_low": "4004.6",
+              "poi_high": "4004.8"
+            },
+            "rr1": "2.333333333333333333333333333",
+            "rr2": "4.416666666666666666666666667",
+            "stop_points": "240",
+            "order": "SELL_LIMIT",
+            "state": "TRADE_CANDIDATE",
+            "preferences": [
+              "TIGHT_STOP_SPREAD_CHECK",
+              "TP1_PREFERENCE_MISMATCH",
+              "TP2_PREFERENCE_MISMATCH"
+            ],
+            "incomplete_fields": [],
+            "broker_checks": [
+              {
+                "name": "broker_quote",
+                "status": "UNKNOWN",
+                "reason": "BROKER_QUOTES_UNVERIFIED",
+                "evidence_ids": []
+              }
+            ],
+            "live_ready": false,
+            "validation_digest": "5969938e1d586c285fa0d07b5543beda38e98e91ec291771fb666dd489fc2847"
+          },
+          {
+            "seed": {
+              "id": "SELL_MC07_raid11_break13_gap14",
+              "model_id": "MC07",
+              "side": "SELL",
+              "route": "REVERSAL",
+              "refs": {
+                "origin": "b8",
+                "raid": "b11",
+                "break": "b13",
+                "c1": "b12",
+                "c2": "b13",
+                "c3": "b14",
+                "prior": "SELL_MC07_raid11_break13_gap14:prior",
+                "inner": "SELL_MC07_raid11_break13_gap14:inner",
+                "swing": "SELL_MC07_raid11_break13_gap14:swing",
+                "buffer": "SELL_MC07_raid11_break13_gap14:buffer",
+                "poi_state": "SELL_MC07_raid11_break13_gap14:m1poi",
+                "latest_swing": "SELL_MC07_raid11_break13_gap14:audit",
+                "barrier_audit": "SELL_MC07_raid11_break13_gap14:p4barrieraudit",
+                "expiry": "SELL_MC07_raid11_break13_gap14:p4expiry",
+                "tp1": "SELL_MC07_raid11_break13_gap14:p4tp1",
+                "tp2": "SELL_MC07_raid11_break13_gap14:p4tp2"
+              },
+              "entry_rule": "NEAR_EDGE",
+              "order_requested": "AUTO",
+              "barrier_refs": [],
+              "leg_bar_refs": [
+                "b11",
+                "b12",
+                "b13"
+              ],
+              "precision_refs": {
+                "c1": "m1b3",
+                "c2": "m1b4",
+                "c3": "m1b5",
+                "break": "m1b4",
+                "level": "SELL_MC07_raid11_break13_gap14:m1level"
+              }
+            },
+            "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+            "card_hash": "0634643553510c43ba9331d488f3ed6da0e5f0e8431aa6697f89b797d9b576d4",
+            "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+            "gates": [
+              {
+                "name": "profile",
+                "status": "PASS",
+                "reason": "XAUUSD_MVP",
+                "evidence_ids": []
+              },
+              {
+                "name": "input",
+                "status": "PASS",
+                "reason": "SNAPSHOT_IDENTITY",
+                "evidence_ids": []
+              },
+              {
+                "name": "model",
+                "status": "PASS",
+                "reason": "SCOPED_MODEL_PROOF",
+                "evidence_ids": [
+                  "b12",
+                  "b13",
+                  "b14",
+                  "SELL_MC07_raid11_break13_gap14:prior",
+                  "SELL_MC07_raid11_break13_gap14:inner",
+                  "b8",
+                  "b11",
+                  "b13"
+                ]
+              },
+              {
+                "name": "route",
+                "status": "PASS",
+                "reason": "ROUTE_DECLARED",
+                "evidence_ids": []
+              },
+              {
+                "name": "entry",
+                "status": "PASS",
+                "reason": "ANCHORED_NEAR_EDGE",
+                "evidence_ids": []
+              },
+              {
+                "name": "trigger",
+                "status": "PASS",
+                "reason": "CLOSED_BREAK_CONFIRMED",
+                "evidence_ids": []
+              },
+              {
+                "name": "swing",
+                "status": "PASS",
+                "reason": "ANCHORED_SWING",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:swing"
+                ]
+              },
+              {
+                "name": "buffer",
+                "status": "PASS",
+                "reason": "ANCHORED_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:buffer"
+                ]
+              },
+              {
+                "name": "tp1",
+                "status": "PASS",
+                "reason": "ANCHORED_TP1",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:p4tp1"
+                ]
+              },
+              {
+                "name": "tp2",
+                "status": "PASS",
+                "reason": "ANCHORED_TP2",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:p4tp2"
+                ]
+              },
+              {
+                "name": "swing_binding",
+                "status": "PASS",
+                "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+                "evidence_ids": []
+              },
+              {
+                "name": "sl",
+                "status": "PASS",
+                "reason": "DERIVED_SWING_PLUS_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:swing",
+                  "SELL_MC07_raid11_break13_gap14:buffer"
+                ]
+              },
+              {
+                "name": "poi",
+                "status": "PASS",
+                "reason": "FRESH_ANNOTATED",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:m1poi"
+                ]
+              },
+              {
+                "name": "expiry",
+                "status": "PASS",
+                "reason": "EVENT_EXPIRY_NOT_UNATTENDED_READY",
+                "evidence_ids": [
+                  "SELL_MC07_raid11_break13_gap14:p4expiry"
+                ]
+              },
+              {
+                "name": "order",
+                "status": "PASS",
+                "reason": "SNAPSHOT_ORDER_PASS",
+                "evidence_ids": [
+                  "quote"
+                ]
+              },
+              {
+                "name": "stop_geometry",
+                "status": "PASS",
+                "reason": "STRUCTURAL_RISK_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "target_geometry",
+                "status": "PASS",
+                "reason": "TARGET_GEOMETRY_CHECK",
+                "evidence_ids": []
+              },
+              {
+                "name": "rr",
+                "status": "PASS",
+                "reason": "RR_PROVISIONAL_PASS",
+                "evidence_ids": []
+              },
+              {
+                "name": "barriers",
+                "status": "PASS",
+                "reason": "FIRST_BARRIER_CHECKED",
+                "evidence_ids": []
+              }
+            ],
+            "prices": {
+              "entry": "4004.6",
+              "swing": "4006.7",
+              "buffer": "0.30",
+              "sl": "4007.00",
+              "tp1": "3999",
+              "tp2": "3994",
+              "poi_low": "4004.6",
+              "poi_high": "4004.8"
+            },
+            "rr1": "2.333333333333333333333333333",
+            "rr2": "4.416666666666666666666666667",
+            "stop_points": "240",
+            "order": "SELL_LIMIT",
+            "state": "TRADE_CANDIDATE",
+            "preferences": [
+              "TIGHT_STOP_SPREAD_CHECK",
+              "TP1_PREFERENCE_MISMATCH",
+              "TP2_PREFERENCE_MISMATCH"
+            ],
+            "incomplete_fields": [],
+            "broker_checks": [
+              {
+                "name": "broker_quote",
+                "status": "UNKNOWN",
+                "reason": "BROKER_QUOTES_UNVERIFIED",
+                "evidence_ids": []
+              }
+            ],
+            "live_ready": false,
+            "validation_digest": "fe5ffee822cbdf1b43fe1bedfda5409e8a32e92748c00b152191faa5d7e1bbd0"
+          },
+          {
+            "seed": {
+              "id": "SELL_MC08_raid11_break13_gap14",
+              "model_id": "MC08",
+              "side": "SELL",
+              "route": "REVERSAL",
+              "refs": {
+                "origin": "b8",
+                "raid": "b11",
+                "break": "b13",
+                "c1": "b12",
+                "c2": "b13",
+                "c3": "b14",
+                "prior": "SELL_MC08_raid11_break13_gap14:prior",
+                "inner": "SELL_MC08_raid11_break13_gap14:inner",
+                "swing": "SELL_MC08_raid11_break13_gap14:swing",
+                "buffer": "SELL_MC08_raid11_break13_gap14:buffer",
+                "poi_state": "SELL_MC08_raid11_break13_gap14:p4poi",
+                "latest_swing": "SELL_MC08_raid11_break13_gap14:audit",
+                "barrier_audit": "SELL_MC08_raid11_break13_gap14:p4barrieraudit",
+                "expiry": "SELL_MC08_raid11_break13_gap14:p4expiry",
+                "tp1": "SELL_MC08_raid11_break13_gap14:p4tp1",
+                "tp2": "SELL_MC08_raid11_break13_gap14:p4tp2"
+              },
+              "entry_rule": "NEAR_EDGE",
+              "order_requested": "AUTO",
+              "barrier_refs": [],
+              "leg_bar_refs": [
+                "b11",
+                "b12",
+                "b13"
+              ],
+              "precision_refs": {}
+            },
+            "snapshot_id": "c9cd5d91c2a5c3004dfb2132b99b3b845889ef77724d8f5561afe631db931ef7",
+            "card_hash": "e64440d571b599d16402190904d9cbaa871fa97bd6875eb3599b6922dccd5bc1",
+            "policy_hash": "75319d3d071b1d71b25067248542c20b881e0e30f846eeaaae752c2240c0b349",
+            "gates": [
+              {
+                "name": "profile",
+                "status": "PASS",
+                "reason": "XAUUSD_MVP",
+                "evidence_ids": []
+              },
+              {
+                "name": "input",
+                "status": "PASS",
+                "reason": "SNAPSHOT_IDENTITY",
+                "evidence_ids": []
+              },
+              {
+                "name": "model",
+                "status": "UNKNOWN",
+                "reason": "MODEL_UNVERIFIED:MISSING_REFERENCE",
+                "evidence_ids": [
+                  "b12",
+                  "b13",
+                  "b14",
+                  "SELL_MC08_raid11_break13_gap14:prior",
+                  "SELL_MC08_raid11_break13_gap14:inner",
+                  "b8",
+                  "b11",
+                  "b13"
+                ]
+              },
+              {
+                "name": "route",
+                "status": "PASS",
+                "reason": "ROUTE_DECLARED",
+                "evidence_ids": []
+              },
+              {
+                "name": "entry",
+                "status": "UNKNOWN",
+                "reason": "ENTRY_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "trigger",
+                "status": "UNKNOWN",
+                "reason": "TRIGGER_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "swing",
+                "status": "PASS",
+                "reason": "ANCHORED_SWING",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:swing"
+                ]
+              },
+              {
+                "name": "buffer",
+                "status": "PASS",
+                "reason": "ANCHORED_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:buffer"
+                ]
+              },
+              {
+                "name": "tp1",
+                "status": "PASS",
+                "reason": "ANCHORED_TP1",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:p4tp1"
+                ]
+              },
+              {
+                "name": "tp2",
+                "status": "PASS",
+                "reason": "ANCHORED_TP2",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:p4tp2"
+                ]
+              },
+              {
+                "name": "swing_binding",
+                "status": "PASS",
+                "reason": "OBSERVED_RAID_TO_BREAK_EXTREME_BINDING",
+                "evidence_ids": []
+              },
+              {
+                "name": "sl",
+                "status": "PASS",
+                "reason": "DERIVED_SWING_PLUS_BUFFER",
+                "evidence_ids": [
+                  "SELL_MC08_raid11_break13_gap14:swing",
+                  "SELL_MC08_raid11_break13_gap14:buffer"
+                ]
+              },
+              {
+                "name": "poi",
+                "status": "UNKNOWN",
+                "reason": "POI_UNVERIFIED:POI_STATE_CHRONOLOGY_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "expiry",
+                "status": "UNKNOWN",
+                "reason": "EXPIRY_UNVERIFIED:EXPIRY_PRECEDES_FORMATION",
+                "evidence_ids": []
+              },
+              {
+                "name": "order",
+                "status": "UNKNOWN",
+                "reason": "ORDER_ENTRY_DEPENDENCY_UNKNOWN",
+                "evidence_ids": []
+              },
+              {
+                "name": "stop_geometry",
+                "status": "UNKNOWN",
+                "reason": "STRUCTURAL_SL_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "target_geometry",
+                "status": "UNKNOWN",
+                "reason": "TARGET_PRICE_UNVERIFIED",
+                "evidence_ids": []
+              },
+              {
+                "name": "rr",
+                "status": "UNKNOWN",
+                "reason": "RR_DEPENDENCY_UNKNOWN",
+                "evidence_ids": []
+              },
+              {
+                "name": "barriers",
+                "status": "UNKNOWN",
+                "reason": "BARRIER_UNVERIFIED:BARRIER_PRICE_DEPENDENCY",
+                "evidence_ids": []
+              }
+            ],
+            "prices": {
+              "entry": null,
+              "swing": "4006.7",
+              "buffer": "0.30",
+              "sl": "4007.00",
+              "tp1": "3999",
+              "tp2": "3994",
+              "poi_low": null,
+              "poi_high": null
+            },
+            "rr1": null,
+            "rr2": null,
+            "stop_points": null,
+            "order": "NONE",
+            "state": "PREPARED_PLAN",
+            "preferences": [],
+            "incomplete_fields": [
+              "model",
+              "entry",
+              "trigger",
+              "poi",
+              "expiry",
+              "order",
+              "stop_geometry",
+              "target_geometry",
+              "rr",
+              "barriers"
+            ],
+            "broker_checks": [
+              {
+                "name": "broker_quote",
+                "status": "UNKNOWN",
+                "reason": "BROKER_QUOTES_UNVERIFIED",
+                "evidence_ids": []
+              }
+            ],
+            "live_ready": false,
+            "validation_digest": null
+          }
+        ],
+        "reasons": [
+          "MODEL_UNVERIFIED:MISSING_REFERENCE",
+          "ENTRY_UNVERIFIED",
+          "TRIGGER_UNVERIFIED",
+          "POI_UNVERIFIED:POI_STATE_CHRONOLOGY_UNVERIFIED",
+          "EXPIRY_UNVERIFIED:EXPIRY_PRECEDES_FORMATION",
+          "ORDER_ENTRY_DEPENDENCY_UNKNOWN",
+          "STRUCTURAL_SL_UNVERIFIED",
+          "TARGET_PRICE_UNVERIFIED",
+          "RR_DEPENDENCY_UNKNOWN",
+          "BARRIER_UNVERIFIED:BARRIER_PRICE_DEPENDENCY"
+        ],
+        "coverage": [
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "evidence_ref": "coverage:BUY:REVERSAL",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "status": "COMPLETE"
+          },
+          {
+            "side": "BUY",
+            "route": "CONTINUATION",
+            "evidence_ref": "coverage:BUY:CONTINUATION",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "status": "COMPLETE"
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "evidence_ref": "coverage:SELL:REVERSAL",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "status": "COMPLETE"
+          },
+          {
+            "side": "SELL",
+            "route": "CONTINUATION",
+            "evidence_ref": "coverage:SELL:CONTINUATION",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "status": "COMPLETE"
+          }
+        ],
+        "coverage_complete": true,
+        "historical_ids": [],
+        "perception": "ANNOTATION_VALIDATED_NOT_PIXEL_VERIFIED",
+        "live_ready": false
+      },
+      "snapshot": {
+        "symbol": "XAUUSD",
+        "feed": "P3_SYNTHETIC_NOT_MARKET",
+        "cursor": "2026-01-05T10:25:00Z",
+        "mode": 1,
+        "timeframes": [
+          "M1",
+          "M15",
+          "M5"
+        ],
+        "source_hashes": [
+          "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+          "9bec9b93cb363095e1e6c352a6c7ecfc629715e5bf5feb8a5236ea8f595d0db9",
+          "d272c83146edb6f5c3fe5af7bd4536265aa6671d46c081d2efd567b5e8d1bd63"
+        ],
+        "quote_ref": "quote",
+        "context": "REPLAY",
+        "price_unit": "XAUUSD_NATIVE",
+        "execution_mode": 5
+      },
+      "scan": {
+        "status": "CANDIDATES_FOUND",
+        "probes": [
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "model_id": "MC04",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "POI_ONLY",
+            "reason": "2 verified three-bar FVGs; not standalone entries",
+            "evidence_ids": [
+              "b6",
+              "b7"
+            ]
+          },
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "model_id": "MC07",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "model_id": "MC08",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "BUY",
+            "route": "CONTINUATION",
+            "model_id": "MC03",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_ELIGIBLE_MODEL_IN_SCOPE",
+            "reason": "MC03_DISABLED; no continuation ENTRY_MODEL enabled",
+            "evidence_ids": []
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "model_id": "MC04",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "POI_ONLY",
+            "reason": "1 verified three-bar FVGs; not standalone entries",
+            "evidence_ids": [
+              "b14"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "model_id": "MC07",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "CANDIDATES_FOUND",
+            "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "model_id": "MC08",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "CANDIDATES_FOUND",
+            "reason": "P2_FVG_LINKED_ONLY; latest confirmed 3-bar pivots; whole-origin color variant",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "CONTINUATION",
+            "model_id": "MC03",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_ELIGIBLE_MODEL_IN_SCOPE",
+            "reason": "MC03_DISABLED; no continuation ENTRY_MODEL enabled",
+            "evidence_ids": []
+          },
+          {
+            "side": "BUY",
+            "route": "REVERSAL",
+            "model_id": "MC05",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "BUY",
+            "route": "CONTINUATION",
+            "model_id": "MC05",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "REVERSAL",
+            "model_id": "MC05",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "CANDIDATES_FOUND",
+            "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          },
+          {
+            "side": "SELL",
+            "route": "CONTINUATION",
+            "model_id": "MC05",
+            "start": "2026-01-05T09:00:00Z",
+            "end": "2026-01-05T10:25:00Z",
+            "bars_examined": 17,
+            "status": "NO_CANDIDATE_AFTER_COMPLETE_SCAN",
+            "reason": "iFVG closed far-boundary inversion; continuation label only with confirmed M15 trend; otherwise local reversal/HTF unknown",
+            "evidence_ids": [
+              "b0",
+              "b1",
+              "b2",
+              "b3",
+              "b4",
+              "b5",
+              "b6",
+              "b7",
+              "b8",
+              "b9",
+              "b10",
+              "b11",
+              "b12",
+              "b13",
+              "b14",
+              "b15",
+              "b16"
+            ]
+          }
+        ],
+        "seed_ids": [
+          "SELL_MC07_raid11_break13_gap14",
+          "SELL_MC08_raid11_break13_gap14",
+          "SELL_MC05_gap6_inv14",
+          "SELL_MC05_gap7_inv13"
+        ],
+        "complete_in_scope": true,
+        "source_hashes": [
+          "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+          "d272c83146edb6f5c3fe5af7bd4536265aa6671d46c081d2efd567b5e8d1bd63",
+          "9bec9b93cb363095e1e6c352a6c7ecfc629715e5bf5feb8a5236ea8f595d0db9"
+        ],
+        "model_scope": [
+          "MC04",
+          "MC05",
+          "MC07",
+          "MC08"
+        ],
+        "unavailable_models": [
+          "MC01",
+          "MC02",
+          "MC03",
+          "MC06",
+          "MC09",
+          "MC10",
+          "MC11",
+          "MC12"
+        ],
+        "span_start": "2026-01-05T09:00:00Z",
+        "span_end": "2026-01-05T10:25:00Z",
+        "events": [
+          "BUY:LIQUIDITY_RAID:b13:prior=b8",
+          "BUY:NO_HISTORICAL_BREAK:b13",
+          "SELL:LIQUIDITY_RAID:b5:prior=b3",
+          "SELL:RAID_NO_LATEST_INNER:b5",
+          "SELL:LIQUIDITY_RAID:b11:prior=b6",
+          "SELL:STRUCTURAL_BREAK:b13:inner=b8",
+          "SELL:MC05_CLOSED_INVERSION:b14:originalFVG=b4..b6",
+          "SELL:MC05_CLOSED_INVERSION:b13:originalFVG=b5..b7"
+        ],
+        "diagnostics": [
+          "P4_SCOPED_VISIBLE_NATIVE_DISCOVERY",
+          "REAL_MARKET_VALIDATION_BLOCKED"
+        ]
+      },
+      "context": [],
+      "sides": {},
+      "source_hashes": [
+        "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+        "d272c83146edb6f5c3fe5af7bd4536265aa6671d46c081d2efd567b5e8d1bd63",
+        "9bec9b93cb363095e1e6c352a6c7ecfc629715e5bf5feb8a5236ea8f595d0db9"
+      ],
+      "release": "PARTIAL_DEVELOPER_PREVIEW",
+      "live_ready": false
+    }
+  },
+  "source_hashes": [
+    "15663a2e5883f001ae16c2f39b5d311d801324722347e55902d6800c67afdf52",
+    "d272c83146edb6f5c3fe5af7bd4536265aa6671d46c081d2efd567b5e8d1bd63",
+    "9bec9b93cb363095e1e6c352a6c7ecfc629715e5bf5feb8a5236ea8f595d0db9"
+  ],
+  "release": "PARTIAL_DEVELOPER_PREVIEW",
+  "live_ready": false
+}

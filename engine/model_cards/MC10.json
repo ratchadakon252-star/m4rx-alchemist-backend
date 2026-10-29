@@ -1,0 +1,16 @@
+{
+  "id": "MC10",
+  "name": "QM/QML",
+  "version": "0.2.0",
+  "role": "BACKLOG",
+  "source_status": "ATTACHED_NOT_REVIEWED",
+  "enabled": false,
+  "source_variant": "P1 proposed only",
+  "sources": [],
+  "dependencies": [],
+  "rules": [],
+  "policy_overlays": [],
+  "limitations": [
+    "Source attached potentially; definition not reviewed in P2; no production predicates"
+  ]
+}

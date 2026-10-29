@@ -1,0 +1,45 @@
+{
+  "id": "MC07",
+  "name": "Breaker",
+  "version": "0.2.0",
+  "role": "ENTRY_MODEL",
+  "source_status": "VERIFIED_SCOPED",
+  "enabled": true,
+  "source_variant": "Latest-swing raid/role-flip; whole-origin-candle range, protected raid extreme stop variant",
+  "sources": [
+    {
+      "file_name": "ICT_Alchemist Trading Note.pdf",
+      "sha256": "536da52e83992ca7374c26a00843bddda39001ca7ef8542e9d450a98acdeabf9",
+      "reviewed_by": "Assistant source-text + rendered diagram review, 2026-10-28; not independent human certification",
+      "pages": [
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "scope": "Latest-swing raid/role-flip; whole-origin-candle range, protected raid extreme stop variant"
+    }
+  ],
+  "dependencies": [
+    "MC04"
+  ],
+  "rules": [
+    "Prior liquidity → latest inner swing/origin → raid → break → displacement FVG",
+    "Bear origin is down-close at inner low; bull mirror",
+    "Mode1 requires close beyond inner swing; Mode9 prior trade-through sufficient, no future reaction",
+    "Entry near edge or midpoint of whole-candle range"
+  ],
+  "policy_overlays": [
+    "P1 XAU mode1/9 only",
+    "P1 provisional RR1>=1.40 RR2>=2.50",
+    "P1 structure-first preferred SL270–355, targets500/1000 M4RX points",
+    "Explicit anchored stop buffer only; no default broker values",
+    "Event expiry and fresh-only policy; candidate not executable"
+  ],
+  "limitations": [
+    "Latest-swing status remains explicit annotated audit, not automatic pivot detection",
+    "Repeated-touch permissive source variant not enabled; partial mitigation OPEN_POLICY",
+    "NEXT targets and expiry differ from book numerical example, declared policy overlays"
+  ]
+}
