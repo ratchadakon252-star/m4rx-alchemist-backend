@@ -233,43 +233,72 @@ def _list_gemini_models(api_key):
             family_rank = 2
         else:
             family_rank = 3
-        return (-major, -minor, family_rank, name)
+        # Prefer a Flash family model first: a newer non-Flash model may be
+        # available in the API catalog but have no Free Tier quota for this project.
+        # Within each family, prefer newer versions.
+        return (family_rank, -major, -minor, name)
 
     return sorted(candidates, key=rank)
 
 
+def _is_zero_model_quota_error(exc):
+    """True only when the provider explicitly reports a zero model quota."""
+    message = str(exc).lower()
+    return bool(
+        re.search(r'\blimit\s*[=:]\s*0\b', message)
+        or 'quota value 0' in message
+    ) and ('quota' in message or 'free_tier' in message or 'free tier' in message)
+
+
 def _gemini_generate_with_fallback(model, api_key, payload):
-    """Try the configured model; if it returns 404, discover and try alternatives."""
+    """Try configured model, then other models on 404 or explicit zero quota."""
     base = 'https://generativelanguage.googleapis.com/v1beta/models/'
     headers = {'x-goog-api-key': api_key, 'Content-Type': 'application/json'}
 
     def request(candidate):
         return _request_json(base + candidate + ':generateContent', headers, payload)
 
-    fallback_error = None
     try:
         return request(model), model
     except VisionError as exc:
-        if 'HTTP 404' not in str(exc):
+        if 'HTTP 404' not in str(exc) and not _is_zero_model_quota_error(exc):
             raise
-        fallback_error = exc
+        initial_error = exc
 
     available = [candidate for candidate in _list_gemini_models(api_key) if candidate != model]
     if not available:
+        if _is_zero_model_quota_error(initial_error):
+            raise VisionError(
+                f'โมเดล Gemini {model} ไม่มีโควตา Free Tier สำหรับโปรเจกต์นี้ (limit=0). '
+                'เลือกโมเดลที่มีโควตา หรือเปิด Billing ใน Google AI Studio'
+            ) from initial_error
         raise VisionError(
             f'Gemini ตอบ HTTP 404 สำหรับโมเดล {model} และไม่พบโมเดล generateContent สำรองที่ใช้ได้'
-        ) from fallback_error
+        ) from initial_error
 
-    last_error = fallback_error
-    # A small number of retries prevents excessive API calls while allowing fallback.
-    for candidate in available[:5]:
+    last_error = initial_error
+    saw_zero_quota = _is_zero_model_quota_error(initial_error)
+    # Try a small number of candidates to avoid uncontrolled API requests.
+    # Candidate ranking prioritizes Flash models before newer, non-Flash families.
+    for candidate in available[:6]:
         try:
             return request(candidate), candidate
         except VisionError as retry_error:
             last_error = retry_error
-            if 'HTTP 404' in str(retry_error):
+            if 'HTTP 404' in str(retry_error) or _is_zero_model_quota_error(retry_error):
+                saw_zero_quota = saw_zero_quota or _is_zero_model_quota_error(retry_error)
                 continue
+            # A normal 429 (e.g. requests/minute) is a temporary rate limit;
+            # don't fan out more requests while rate-limited.
             raise
+
+    if saw_zero_quota:
+        detail = str(last_error)[:260]
+        raise VisionError(
+            'Gemini: โมเดลสำรองที่ลองไม่มีโควตา Free Tier หรือโควตาเป็น 0. '
+            'โค้ดไม่สามารถเพิ่มโควตาให้ได้; เลือกโมเดลที่มี Free Tier quota สำหรับโปรเจกต์นี้ '
+            'หรือเปิด Billing. รายละเอียดล่าสุด: ' + detail
+        ) from last_error
 
     raise VisionError(
         'Gemini ตอบ HTTP 404 กับโมเดลสำรองที่ค้นพบ ลองตรวจ API Key และรายชื่อโมเดลใน Google AI Studio'
